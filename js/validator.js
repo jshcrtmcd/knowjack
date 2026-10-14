@@ -60,6 +60,10 @@
           errors.push(`${qa}.answerIndex (${q.answerIndex}) is out of range for ${q.choices.length} choices (use 0–${q.choices.length - 1}).`);
         }
         if (typeof q.explanation !== 'string') errors.push(`${qa}.explanation is missing or must be a string.`);
+        // Optional visual: "image" (path/URL to an SVG or image) + "highlight" (id of an element inside that SVG).
+        if (q.image !== undefined && !isNonEmptyString(q.image)) errors.push(`${qa}.image must be a non-empty string (path or URL) if present.`);
+        if (q.highlight !== undefined && !isNonEmptyString(q.highlight)) errors.push(`${qa}.highlight must be a non-empty string (an element id in the SVG) if present.`);
+        if (q.highlight !== undefined && q.image === undefined) errors.push(`${qa}.highlight needs an "image" to highlight.`);
       });
     });
 

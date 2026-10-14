@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" font-family="system-ui, sans-serif">
+  <title>Simplified heart — four chambers and great vessels (anatomical view: patient's right is on the left)</title>
+  <!-- great vessels -->
+  <g id="svc" fill="#7fb3e6" stroke="#2b5c8a" stroke-width="3">
+    <rect x="86" y="18" width="34" height="78" rx="14"/>
+  </g>
+  <g id="ivc" fill="#7fb3e6" stroke="#2b5c8a" stroke-width="3">
+    <rect x="86" y="196" width="34" height="80" rx="14"/>
+  </g>
+  <g id="pa" fill="#7fb3e6" stroke="#2b5c8a" stroke-width="3">
+    <path d="M152 86 c0 -40 30 -60 70 -60 h60 v26 h-60 c-22 0 -38 12 -38 34 z"/>
+  </g>
+  <g id="aorta" fill="#f08a8a" stroke="#9c2b2b" stroke-width="3">
+    <path d="M184 110 c0 -70 50 -90 96 -90 h50 v26 h-50 c-34 0 -64 12 -64 64 z"/>
+  </g>
+  <!-- chambers -->
+  <g id="ra" fill="#9fc8f0" stroke="#2b5c8a" stroke-width="3">
+    <path d="M78 96 h90 v86 q-45 10 -90 0 z" />
+  </g>
+  <g id="rv" fill="#6fa8dc" stroke="#2b5c8a" stroke-width="3">
+    <path d="M78 186 q45 10 90 0 v30 q-30 60 -90 20 z"/>
+  </g>
+  <g id="la" fill="#f7b0b0" stroke="#9c2b2b" stroke-width="3">
+    <path d="M186 110 h100 v76 q-50 10 -100 0 z"/>
+  </g>
+  <g id="lv" fill="#e96a6a" stroke="#9c2b2b" stroke-width="3">
+    <path d="M186 190 q50 10 100 0 v24 q-10 70 -100 54 z"/>
+  </g>
+  <!-- septum -->
+  <g id="septum" fill="#c9a27c" stroke="#7a5230" stroke-width="2">
+    <rect x="170" y="96" width="14" height="172" rx="6"/>
+  </g>
+  <!-- valves -->
+  <g id="tricuspid" stroke="#1a1030" stroke-width="4" stroke-linecap="round" fill="none">
+    <path d="M92 184 l20 -6 l20 6 l20 -6 l20 6"/>
+  </g>
+  <g id="mitral" stroke="#1a1030" stroke-width="4" stroke-linecap="round" fill="none">
+    <path d="M196 188 l24 -6 l24 6 l24 -6 l24 6"/>
+  </g>
+  <!-- labels (light, so highlighting still has to be read) -->
+  <g font-size="12" fill="#1a1030" opacity=".55">
+    <text x="26" y="48">from body</text>
+    <text x="26" y="232">from body</text>
+    <text x="290" y="60">to lungs</text>
+    <text x="296" y="142">to body</text>
+    <text x="110" y="300" font-size="11">patient's RIGHT</text>
+    <text x="214" y="300" font-size="11">patient's LEFT</text>
+  </g>
+</svg>

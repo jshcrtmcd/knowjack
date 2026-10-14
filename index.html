@@ -4,17 +4,45 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#120a2a">
-  <title>Know Jack — Concept Trivia</title>
+  <title>THINK&amp;STUFF — concept trivia</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="topbar">
     <button id="homeBtn" class="icon-btn" title="Back to menu" aria-label="Back to menu">⌂</button>
-    <div class="brand">KNOW<span>JACK</span></div>
-    <button id="muteBtn" class="icon-btn" title="Mute sound" aria-label="Mute sound" aria-pressed="false">🔊</button>
+    <div class="brand">THINK<span>&amp;</span>STUFF</div>
+    <div class="topbar-right">
+      <button id="voiceBtn" class="icon-btn" title="Host voice" aria-label="Host voice" aria-pressed="false">🗣</button>
+      <button id="muteBtn" class="icon-btn" title="Mute sound effects" aria-label="Mute sound effects" aria-pressed="false">🔊</button>
+    </div>
   </header>
 
   <main id="app">
+
+    <!-- Host panel: visible on most screens -->
+    <div id="host" class="host" aria-live="polite">
+      <div class="host-avatar" aria-hidden="true">
+        <svg viewBox="0 0 64 64" width="56" height="56">
+          <path d="M14 40 q-8 -26 18 -32 q26 -6 20 30 q-4 -2 -6 -10 q-16 6 -26 0 q-2 8 -6 12 z" fill="#3a1d6e"/>
+          <circle cx="32" cy="34" r="19" fill="#f1c9a5"/>
+          <path d="M16 30 q2 -16 16 -16 q14 0 16 16 q-6 -8 -16 -6 q-10 -2 -16 6 z" fill="#3a1d6e"/>
+          <path d="M22 10 l4 -6 l6 6 l6 -6 l4 6 z" fill="#ffcc33"/>
+          <circle cx="32" cy="8" r="2" fill="#ff5f9e"/>
+          <circle id="hostEyeL" cx="25" cy="34" r="2.6" fill="#1a1030"/>
+          <circle id="hostEyeR" cx="39" cy="34" r="2.6" fill="#1a1030"/>
+          <path d="M20 29 q5 -4 10 -1" stroke="#1a1030" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M34 28 q5 -3 10 1" stroke="#1a1030" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path id="hostMouth" d="M25 44 q7 5 14 0" stroke="#c2185b" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+          <circle cx="13" cy="42" r="3.2" fill="#ffcc33"/>
+          <circle cx="51" cy="42" r="3.2" fill="#ffcc33"/>
+          <circle cx="42" cy="40" r="1.3" fill="#1a1030"/>
+        </svg>
+      </div>
+      <div class="host-bubble">
+        <div class="host-name">Vivian Vex</div>
+        <div id="hostText" class="host-text"></div>
+      </div>
+    </div>
 
     <!-- MENU -->
     <section id="screen-menu" class="screen active">
@@ -32,38 +60,50 @@
       <div id="menuError" class="error" role="alert" hidden></div>
     </section>
 
-    <!-- CATEGORY INFO -->
+    <!-- CATEGORY INFO / MODE -->
     <section id="screen-info" class="screen">
       <h1 id="infoTitle" class="title"></h1>
       <p id="infoDesc" class="subtitle"></p>
       <div class="stats-row">
         <div class="stat"><div id="infoConcepts" class="stat-num">0</div><div class="stat-label">concepts</div></div>
         <div class="stat"><div id="infoQuestions" class="stat-num">0</div><div class="stat-label">questions</div></div>
-        <div class="stat"><div id="infoSeconds" class="stat-num">15</div><div class="stat-label">sec / question</div></div>
+        <div class="stat"><div id="infoBest" class="stat-num">—</div><div class="stat-label">your best</div></div>
       </div>
+
+      <button id="startGameBtn" class="btn btn-primary btn-big" type="button">Play — about 5 minutes</button>
+      <p class="hint">3 rounds × 90 s + a 45-second Rapid Fire. The clock only runs while you're choosing.</p>
+
       <details class="concept-path">
         <summary>Learning path (foundational → applied)</summary>
         <ol id="infoPath"></ol>
       </details>
-      <div class="options-row">
-        <label class="toggle"><input type="checkbox" id="optShuffle"> Shuffle questions within each concept</label>
-        <label class="toggle">Questions per concept
-          <select id="optPerConcept">
-            <option value="0">All</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </select>
-        </label>
+    </section>
+
+    <!-- ROUND INTRO -->
+    <section id="screen-round" class="screen">
+      <div class="round-card">
+        <div id="roundKicker" class="round-kicker">Round 1 of 3</div>
+        <h1 id="roundName" class="title round-title">Foundations</h1>
+        <p id="roundDesc" class="subtitle"></p>
+        <div class="stats-row">
+          <div class="stat"><div id="roundClockInfo" class="stat-num">2:00</div><div class="stat-label">round clock</div></div>
+          <div class="stat"><div id="roundPerQ" class="stat-num">12s</div><div class="stat-label">per question</div></div>
+          <div class="stat"><div id="roundMult" class="stat-num">1×</div><div class="stat-label">points</div></div>
+        </div>
+        <button id="roundStartBtn" class="btn btn-primary btn-big">Start round</button>
       </div>
-      <button id="startBtn" class="btn btn-primary btn-big">Start game</button>
     </section>
 
     <!-- QUESTION -->
     <section id="screen-question" class="screen">
+      <div id="roundClock" class="round-clock">
+        <div id="roundClockBar" class="round-clock-bar"></div>
+        <div class="round-clock-label"><span id="roundClockName">Round 1</span><span id="roundClockTime">2:00</span></div>
+      </div>
+
       <div class="hud">
         <div class="hud-left">
-          <div id="qProgress" class="hud-progress">1 / 10</div>
+          <div id="qProgress" class="hud-progress">Q1</div>
           <div id="qConcept" class="hud-concept">Concept</div>
         </div>
         <div class="hud-right">
@@ -78,9 +118,11 @@
       </div>
 
       <div id="questionCard" class="question-card">
+        <div id="questionVisual" class="visual" hidden></div>
         <p id="questionText" class="question-text"></p>
       </div>
 
+      <div id="readHint" class="read-hint" hidden>Read it… options in <span id="readCount">2</span></div>
       <div id="choices" class="choices" role="group" aria-label="Answer choices"></div>
 
       <div id="feedback" class="feedback" hidden>
@@ -97,15 +139,19 @@
       <div class="final-score">
         <div id="finalScore" class="final-num">0</div>
         <div class="stat-label">points</div>
+        <div id="finalBest" class="best-badge" hidden>New personal best!</div>
       </div>
       <div class="stats-row">
         <div class="stat"><div id="finalCorrect" class="stat-num">0/0</div><div class="stat-label">correct</div></div>
         <div class="stat"><div id="finalAccuracy" class="stat-num">0%</div><div class="stat-label">accuracy</div></div>
         <div class="stat"><div id="finalAvgTime" class="stat-num">0s</div><div class="stat-label">avg answer</div></div>
       </div>
+      <div id="roundScores" class="round-scores"></div>
       <h2 class="section-title">Breakdown by topic</h2>
       <div id="breakdown" class="breakdown"></div>
       <div id="weakSpots" class="weak-spots"></div>
+      <h2 class="section-title" id="reviewTitle">What you missed</h2>
+      <div id="review" class="review"></div>
       <div class="btn-row">
         <button id="replayBtn" class="btn btn-primary">Play again</button>
         <button id="menuBtn" class="btn btn-secondary">Change category</button>
@@ -116,6 +162,7 @@
 
   <script src="js/validator.js"></script>
   <script src="js/audio.js"></script>
+  <script src="js/host.js"></script>
   <script src="js/game.js"></script>
 </body>
 </html>

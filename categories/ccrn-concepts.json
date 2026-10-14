@@ -3,9 +3,83 @@
   "description": "Critical-care nursing concepts taught from the ground up: physiology first, then monitoring and recognition, then applied scenarios. Quick questions, clear explanations. Verify clinical specifics against the AACN CCRN content outline and current references before relying on them.",
   "concepts": [
     {
+      "id": "cv-heart-anatomy",
+      "title": "Cardiovascular: Heart anatomy (visual)",
+      "prerequisites": [],
+      "questions": [
+        {
+          "question": "Which chamber is highlighted?",
+          "image": "visuals/heart-simplified.svg",
+          "highlight": "lv",
+          "choices": [
+            "Right ventricle",
+            "Left atrium",
+            "Right atrium",
+            "Left ventricle"
+          ],
+          "answerIndex": 3,
+          "explanation": "The left ventricle is the thick-walled bottom-left chamber (on the patient's left, so the viewer's right). It pumps oxygenated blood into the aorta and out to the body — which is why it's the strongest chamber."
+        },
+        {
+          "question": "Which chamber is highlighted?",
+          "image": "visuals/heart-simplified.svg",
+          "highlight": "ra",
+          "choices": [
+            "Left atrium",
+            "Right ventricle",
+            "Right atrium",
+            "Left ventricle"
+          ],
+          "answerIndex": 2,
+          "explanation": "The right atrium is the upper chamber on the patient's right. It receives deoxygenated blood from the body via the superior and inferior vena cava and holds the SA node."
+        },
+        {
+          "question": "Which structure is highlighted?",
+          "image": "visuals/heart-simplified.svg",
+          "highlight": "aorta",
+          "choices": [
+            "Pulmonary artery",
+            "Aorta",
+            "Superior vena cava",
+            "Inferior vena cava"
+          ],
+          "answerIndex": 1,
+          "explanation": "The aorta is the big red vessel leaving the left ventricle. It carries oxygenated blood to the body. Its pressure is what the left ventricle's afterload is measured against."
+        },
+        {
+          "question": "Which structure is highlighted?",
+          "image": "visuals/heart-simplified.svg",
+          "highlight": "pa",
+          "choices": [
+            "Pulmonary artery",
+            "Aorta",
+            "Superior vena cava",
+            "Coronary artery"
+          ],
+          "answerIndex": 0,
+          "explanation": "The pulmonary artery leaves the right ventricle and carries deoxygenated blood to the lungs — the one artery in the body that carries blue blood. A PA catheter sits here."
+        },
+        {
+          "question": "Which chamber is highlighted?",
+          "image": "visuals/heart-simplified.svg",
+          "highlight": "rv",
+          "choices": [
+            "Left ventricle",
+            "Right atrium",
+            "Left atrium",
+            "Right ventricle"
+          ],
+          "answerIndex": 3,
+          "explanation": "The right ventricle is the lower chamber on the patient's right. It pumps into the low-pressure pulmonary circulation, so its wall is much thinner than the left ventricle's."
+        }
+      ]
+    },
+    {
       "id": "cv-cardiac-physiology",
       "title": "Cardiovascular: Normal cardiac physiology",
-      "prerequisites": [],
+      "prerequisites": [
+        "cv-heart-anatomy"
+      ],
       "questions": [
         {
           "question": "Cardiac output equals heart rate multiplied by what?",
@@ -114,6 +188,58 @@
           ],
           "answerIndex": 3,
           "explanation": "The AV delay gives the atria time to contract and top off the ventricles (the 'atrial kick') before the ventricles fire. Losing that kick, as in atrial fibrillation, can drop cardiac output."
+        },
+        {
+          "question": "What does the highlighted wave represent?",
+          "image": "visuals/ecg-waveform.svg",
+          "highlight": "p",
+          "choices": [
+            "Ventricular depolarization",
+            "Atrial depolarization",
+            "Ventricular repolarization",
+            "AV node delay"
+          ],
+          "answerIndex": 1,
+          "explanation": "The small first bump is the P wave: the atria depolarizing. Every normal beat starts here, triggered by the SA node."
+        },
+        {
+          "question": "What does the highlighted complex represent?",
+          "image": "visuals/ecg-waveform.svg",
+          "highlight": "qrs",
+          "choices": [
+            "Ventricular depolarization",
+            "Atrial depolarization",
+            "Ventricular repolarization",
+            "Atrial repolarization"
+          ],
+          "answerIndex": 0,
+          "explanation": "The tall sharp spike is the QRS: the ventricles depolarizing. A narrow QRS means the impulse used the normal fast conduction system; a wide one means it didn't."
+        },
+        {
+          "question": "What does the highlighted wave represent?",
+          "image": "visuals/ecg-waveform.svg",
+          "highlight": "t",
+          "choices": [
+            "Ventricular depolarization",
+            "Atrial depolarization",
+            "Atrial contraction",
+            "Ventricular repolarization"
+          ],
+          "answerIndex": 3,
+          "explanation": "The rounded bump after the QRS is the T wave: the ventricles recharging (repolarizing). Peaked T waves hint at hyperkalemia; the ST segment just before it is where ischemia shows."
+        },
+        {
+          "question": "The highlighted span, from the start of the P wave to the start of the QRS, is the:",
+          "image": "visuals/ecg-waveform.svg",
+          "highlight": "pr-interval",
+          "choices": [
+            "QT interval",
+            "ST segment",
+            "PR interval",
+            "QRS duration"
+          ],
+          "answerIndex": 2,
+          "explanation": "The PR interval is mostly the AV node's built-in delay. When it stretches beyond about 0.20 seconds (one big box), that's first-degree AV block."
         }
       ]
     },

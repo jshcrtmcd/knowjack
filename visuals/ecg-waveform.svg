@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 200" font-family="system-ui, sans-serif">
+  <title>One cardiac cycle on an ECG — P wave, PR interval, QRS complex, ST segment, T wave</title>
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M20 0 H0 V20" fill="none" stroke="#f3b7b7" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect x="0" y="0" width="420" height="200" fill="#fff3f3"/>
+  <rect x="0" y="0" width="420" height="200" fill="url(#grid)"/>
+  <!-- baseline -->
+  <path d="M0 130 H60" fill="none" stroke="#1a1030" stroke-width="3"/>
+  <!-- P wave -->
+  <g id="p" fill="none" stroke="#1a1030" stroke-width="3" stroke-linecap="round">
+    <path d="M60 130 q20 -40 40 0"/>
+  </g>
+  <!-- PR segment (flat part between P and QRS) -->
+  <g id="pr" fill="none" stroke="#1a1030" stroke-width="3" stroke-linecap="round">
+    <path d="M100 130 H140"/>
+  </g>
+  <!-- QRS complex -->
+  <g id="qrs" fill="none" stroke="#1a1030" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M140 130 l10 10 l14 -110 l14 128 l12 -28"/>
+  </g>
+  <!-- ST segment -->
+  <g id="st" fill="none" stroke="#1a1030" stroke-width="3" stroke-linecap="round">
+    <path d="M190 130 H240"/>
+  </g>
+  <!-- T wave -->
+  <g id="t" fill="none" stroke="#1a1030" stroke-width="3" stroke-linecap="round">
+    <path d="M240 130 q35 -60 70 0"/>
+  </g>
+  <path d="M310 130 H420" fill="none" stroke="#1a1030" stroke-width="3"/>
+  <!-- bracket showing the PR interval span (start of P to start of QRS) -->
+  <g id="pr-interval" fill="none" stroke="#1a1030" stroke-width="2.5" stroke-linecap="round">
+    <path d="M60 165 v8 h80 v-8"/>
+  </g>
+  <!-- bracket showing the QT interval span -->
+  <g id="qt-interval" fill="none" stroke="#1a1030" stroke-width="2.5" stroke-linecap="round">
+    <path d="M140 185 v8 h170 v-8"/>
+  </g>
+</svg>
