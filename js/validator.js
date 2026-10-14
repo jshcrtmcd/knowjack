@@ -51,19 +51,38 @@
           return;
         }
         if (!isNonEmptyString(q.question)) errors.push(`${qa}.question is missing or must be a non-empty string.`);
-        if (!Array.isArray(q.choices) || q.choices.length < 3 || q.choices.length > 4 || !q.choices.every(isNonEmptyString)) {
-          errors.push(`${qa}.choices must be an array of 3–4 non-empty strings.`);
-        }
-        if (!Number.isInteger(q.answerIndex)) {
-          errors.push(`${qa}.answerIndex is missing or must be a whole number.`);
-        } else if (Array.isArray(q.choices) && (q.answerIndex < 0 || q.answerIndex >= q.choices.length)) {
-          errors.push(`${qa}.answerIndex (${q.answerIndex}) is out of range for ${q.choices.length} choices (use 0–${q.choices.length - 1}).`);
+        if (q.type !== undefined && q.type !== 'hotspot') errors.push(`${qa}.type must be omitted or "hotspot".`);
+        if (q.loaded !== undefined && typeof q.loaded !== 'boolean') errors.push(`${qa}.loaded must be true or false if present.`);
+        if (q.type === 'hotspot') {
+          // Tap-the-picture question: needs image, target, hotspots (ids in the SVG). choices/answerIndex are ignored.
+          if (!isNonEmptyString(q.image)) errors.push(`${qa}.image is required for a hotspot question.`);
+          if (!isNonEmptyString(q.target)) errors.push(`${qa}.target (the id of the correct element) is required for a hotspot question.`);
+          if (!Array.isArray(q.hotspots) || q.hotspots.length < 2 || !q.hotspots.every(isNonEmptyString)) errors.push(`${qa}.hotspots must list 2+ element ids the player can tap.`);
+          else if (isNonEmptyString(q.target) && !q.hotspots.includes(q.target)) errors.push(`${qa}.hotspots must include the target "${q.target}".`);
+        } else {
+          if (!Array.isArray(q.choices) || q.choices.length < 3 || q.choices.length > 4 || !q.choices.every(isNonEmptyString)) {
+            errors.push(`${qa}.choices must be an array of 3–4 non-empty strings.`);
+          }
+          const n = Array.isArray(q.choices) ? q.choices.length : 0;
+          if (Array.isArray(q.answerIndex)) {
+            // Multiple correct answers: only allowed on Loaded Questions.
+            if (!q.loaded) errors.push(`${qa}.answerIndex can only be a list on a Loaded Question (set "loaded": true).`);
+            if (!q.answerIndex.length || !q.answerIndex.every(Number.isInteger)) errors.push(`${qa}.answerIndex list must contain whole numbers.`);
+            else if (n && q.answerIndex.some((i) => i < 0 || i >= n)) errors.push(`${qa}.answerIndex has an index out of range for ${n} choices.`);
+            else if (new Set(q.answerIndex).size !== q.answerIndex.length) errors.push(`${qa}.answerIndex has a duplicate index.`);
+            else if (n && q.answerIndex.length >= n) errors.push(`${qa}.answerIndex marks every choice correct — leave at least one wrong.`);
+          } else if (!Number.isInteger(q.answerIndex)) {
+            errors.push(`${qa}.answerIndex is missing or must be a whole number.`);
+          } else if (n && (q.answerIndex < 0 || q.answerIndex >= n)) {
+            errors.push(`${qa}.answerIndex (${q.answerIndex}) is out of range for ${n} choices (use 0–${n - 1}).`);
+          }
         }
         if (typeof q.explanation !== 'string') errors.push(`${qa}.explanation is missing or must be a string.`);
         // Optional visual: "image" (path/URL to an SVG or image) + "highlight" (id of an element inside that SVG).
         if (q.image !== undefined && !isNonEmptyString(q.image)) errors.push(`${qa}.image must be a non-empty string (path or URL) if present.`);
         if (q.highlight !== undefined && !isNonEmptyString(q.highlight)) errors.push(`${qa}.highlight must be a non-empty string (an element id in the SVG) if present.`);
         if (q.highlight !== undefined && q.image === undefined) errors.push(`${qa}.highlight needs an "image" to highlight.`);
+        ['show', 'hide'].forEach((k) => { if (q[k] !== undefined && (!Array.isArray(q[k]) || !q[k].every(isNonEmptyString))) errors.push(`${qa}.${k} must be an array of element ids if present.`); });
       });
     });
 

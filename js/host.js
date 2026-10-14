@@ -49,6 +49,19 @@
       "The clock won, darling. It usually does. {answer}.",
       "You froze. It happens to the best of us, by which I mean you. It was {answer}."
     ],
+    loadedIntro: [
+      "Ooh. A Loaded Question. Triple the time, no help from me, and possibly more than one right answer. Breathe.",
+      "Stop everything. Loaded Question. The round clock is frozen; your dignity is not.",
+      "A Loaded Question, darling. Think it through. I'll just be here, radiating patience."
+    ],
+    loadedCorrect: [
+      "Oh, that's a big one. Properly impressive. I'd clap but I've just done my nails.",
+      "Correct on a Loaded Question. Somewhere, a professor felt a chill and didn't know why."
+    ],
+    loadedWrong: [
+      "Not quite. The full answer was {answer}. Nobody gets those first time. Well — I did. Once.",
+      "Close, but no. {answer}. The explanation is right there; read it like you mean it."
+    ],
     eliminated: [
       "There. I removed one for you. Consider it a gift.",
       "One fewer wrong answer. I'm generous in small, cheap ways.",
@@ -89,13 +102,18 @@
 
   try { voiceOn = localStorage.getItem(VOICE_KEY) === '1'; } catch (e) { /* ignore */ }
 
-  function pick(key, vars) {
+  function pickIndex(key) {
     const pool = LINES[key] || [''];
     let i = Math.floor(Math.random() * pool.length);
     if (pool.length > 1 && i === lastUsed[key]) i = (i + 1) % pool.length;
     lastUsed[key] = i;
+    return i;
+  }
+  function render(key, i, vars) {
+    const pool = LINES[key] || [''];
     return pool[i].replace(/\{(\w+)\}/g, (m, k) => (vars && vars[k] !== undefined ? String(vars[k]) : m));
   }
+  function pick(key, vars) { return render(key, pickIndex(key), vars); }
 
   // ----- Voice -----
   function voiceSupported() { return 'speechSynthesis' in global && 'SpeechSynthesisUtterance' in global; }
@@ -116,9 +134,35 @@
     preferredVoice = chooseVoice();
   }
 
+  // ----- Pre-recorded clips (optional) -----
+  // Drop files in audio/host/ and list them in audio/host/manifest.json as
+  //   { "correctFast": { "0": "correctFast-0.mp3", "1": "correctFast-1.mp3" }, "wrong": { "2": "wrong-2.mp3" } }
+  // keyed by line key and the line's index in LINES. A clip plays instead of the synthesized voice;
+  // lines without a clip fall back to the browser voice. Lines with {placeholders} still get the clip
+  // only if you recorded them with the placeholder spoken generically, so prefer recording fixed lines.
+  let clips = null;
+  fetch('audio/host/manifest.json', { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : null)).then((m) => { clips = m || {}; }).catch(() => { clips = {}; });
+  let clipAudio = null;
+
+  function playClip(key, index) {
+    const file = clips && clips[key] && clips[key][String(index)];
+    if (!file) return null;
+    return new Promise((resolve) => {
+      try {
+        if (clipAudio) { clipAudio.pause(); }
+        clipAudio = new Audio('audio/host/' + file);
+        clipAudio.onended = resolve; clipAudio.onerror = resolve;
+        clipAudio.play().catch(resolve);
+        setTimeout(resolve, 12000);
+      } catch (e) { resolve(); }
+    });
+  }
+
   /** Speak text; returns a Promise that resolves when speech ends (or immediately if voice is off). */
-  function speak(text) {
-    if (!voiceOn || !voiceSupported() || !text) return Promise.resolve();
+  function speak(text, key, index) {
+    if (!voiceOn || !text) return Promise.resolve();
+    if (key !== undefined) { const c = playClip(key, index); if (c) return c; }
+    if (!voiceSupported()) return Promise.resolve();
     return new Promise((resolve) => {
       try {
         global.speechSynthesis.cancel();
@@ -136,7 +180,7 @@
   function setVoice(on) {
     voiceOn = !!on;
     try { localStorage.setItem(VOICE_KEY, voiceOn ? '1' : '0'); } catch (e) { /* ignore */ }
-    if (!voiceOn && voiceSupported()) global.speechSynthesis.cancel();
+    if (!voiceOn) { if (voiceSupported()) global.speechSynthesis.cancel(); if (clipAudio) { try { clipAudio.pause(); } catch (e) { /* ignore */ } } }
   }
 
   global.Host = {
@@ -144,8 +188,9 @@
     line: pick,
     speak,
     /** Pick a line and speak it. Returns { text, done } where done resolves when speech finishes. */
-    say(key, vars) { const text = pick(key, vars); return { text, done: speak(text) }; },
-    hush() { if (voiceSupported()) global.speechSynthesis.cancel(); },
+    say(key, vars) { const i = pickIndex(key); const text = render(key, i, vars); return { text, done: speak(text, key, i) }; },
+    hush() { if (voiceSupported()) global.speechSynthesis.cancel(); if (clipAudio) { try { clipAudio.pause(); } catch (e) { /* ignore */ } } },
+    lines: LINES,
     voiceSupported,
     isVoiceOn() { return voiceOn; },
     setVoice,

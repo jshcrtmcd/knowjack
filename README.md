@@ -12,8 +12,11 @@ trivia/
 ├── js/audio.js                 # synthesized buzzer sounds (Web Audio, no files), mute toggle
 ├── js/host.js                  # Vivian Vex: all host lines + optional browser voice (edit the jokes here)
 ├── js/game.js                  # rounds, clocks, elimination, scoring, results
-├── visuals/heart-simplified.svg
-├── visuals/ecg-waveform.svg
+├── visuals/heart-simplified.svg   # ids: ra rv la lv aorta pa svc ivc septum tricuspid mitral coronaries rca lad lcx
+├── visuals/ecg-waveform.svg       # ids: p pr qrs st t pr-interval qt-interval
+├── visuals/iabp-waveform.svg      # ids: unassisted-systole dicrotic-notch unassisted-diastole assisted-systole inflation-point augmentation assisted-eod
+├── audio/host/                 # optional pre-recorded host clips (see its README)
+├── categories/cvicu-cardiac-surgery.json
 ├── categories/manifest.json    # list of built-in categories shown on the menu
 ├── categories/ccrn-concepts.json
 └── README.md
@@ -31,7 +34,11 @@ trivia/
 - 🗣 toggles the host's voice (uses the browser's built-in speech synthesis; off by default). 🔊 mutes the sound effects. Both settings are remembered.
 - Results: total score, per-round scores, accuracy, average answer time, breakdown by concept, "review next" list, and every missed question with its explanation. Your best score per category is saved on the device.
 
-Tunables (round lengths, reading time, points) are constants at the top of `js/game.js`.
+- **Loaded Questions** 💣: harder questions marked `"loaded": true`. Triple reading time, triple answer time, the round clock is frozen while they're on screen, nothing gets eliminated, double points, and some have more than one correct answer (pick them all, then *Lock in*). The chance of one appearing ramps up each question (0.35 / 0.7 / 1.05 percentage points per question in rounds 1 / 2 / 3), resets to zero when one lands — except a quarter of the time, when it doesn't reset and a streak can happen. Never in Rapid Fire. Across many simulated games that's about 1.5 per game: ~8% see none, ~80% see one or two, ~12% see three or more.
+- **Tap-the-picture questions** 👆: `"type": "hotspot"` — the options are regions of the image; tap the right one. Wrong regions get eliminated over time like text options.
+- Between rounds: curtains, a puff of smoke, and Vivian.
+
+Tunables (round lengths, reading time, points, Loaded Question odds) are constants at the top of `js/game.js`.
 
 ### The host
 
@@ -60,7 +67,11 @@ Vivian Vex lives in `js/host.js`. Every line is in the `LINES` object, grouped b
 
    Rules the validator enforces: ids unique; 3–4 choices; `answerIndex` within range; prerequisites must reference existing ids and not form a loop.
 
-   **Visual questions (optional):** add `"image": "visuals/heart-simplified.svg"` to a question to show a picture above it, and `"highlight": "lv"` to pulse the element with that id inside the SVG and drop a "?" marker on it. The built-in heart SVG has ids `ra`, `rv`, `la`, `lv`, `aorta`, `pa`, `svc`, `ivc`, `septum`, `tricuspid`, `mitral`; the ECG SVG has `p`, `pr`, `qrs`, `st`, `t`, `pr-interval`, `qt-interval`. Any SVG you add with ids works the same way; a PNG/JPG path shows as a plain image.
+   **Loaded Question:** add `"loaded": true`. Its `answerIndex` may be a list of indices (`[0, 2]`) for multiple correct answers — leave at least one wrong choice.
+
+   **Tap-the-picture question:** `{"question": "Tap the aorta.", "type": "hotspot", "image": "visuals/heart-simplified.svg", "target": "aorta", "targetLabel": "Aorta", "hotspots": ["aorta", "pa", "svc", "ivc"], "explanation": "..."}` — no `choices` needed. `hotspots` are the tappable element ids (must include `target`); `targetLabel` is shown in feedback.
+
+   **Visual questions (optional):** add `"image": "visuals/heart-simplified.svg"` to a question to show a picture above it, and `"highlight": "lv"` to pulse the element with that id inside the SVG and drop a "?" marker on it. The built-in heart SVG has ids `ra`, `rv`, `la`, `lv`, `aorta`, `pa`, `svc`, `ivc`, `septum`, `tricuspid`, `mitral`; the ECG SVG has `p`, `pr`, `qrs`, `st`, `t`, `pr-interval`, `qt-interval`. `"show": ["coronaries"]` / `"hide": ["coronaries"]` bring a layer to full opacity or remove it for that question. Any SVG you add with ids works the same way; a PNG/JPG path shows as a plain image.
 
 2. Add it to `categories/manifest.json`:
 
@@ -96,4 +107,4 @@ python3 -m http.server 8000      # then open http://localhost:8000
 
 ## Clinical content — please verify before studying from it
 
-`ccrn-concepts.json` was written to teach concepts, not to mirror the exam, and it has **not** been reviewed by a clinician. Check it against the AACN CCRN (Adult) exam handbook / test plan and a current critical-care reference. Items most worth checking are listed in the project notes that came with this build (numeric thresholds, sepsis definitions, hyperkalemia ECG progression, CPP targets, ARDS ventilation specifics, and the HIT management statement).
+`ccrn-concepts.json` and `cvicu-cardiac-surgery.json` were written to teach concepts, not to mirror the exam, and it has **not** been reviewed by a clinician. Check it against the AACN CCRN (Adult) exam handbook / test plan and a current critical-care reference. Items most worth checking are listed in the project notes that came with this build (numeric thresholds, sepsis definitions, hyperkalemia ECG progression, CPP targets, ARDS ventilation specifics, and the HIT management statement).

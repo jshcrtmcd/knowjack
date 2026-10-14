@@ -18,7 +18,10 @@
             "Left ventricle"
           ],
           "answerIndex": 3,
-          "explanation": "The left ventricle is the thick-walled bottom-left chamber (on the patient's left, so the viewer's right). It pumps oxygenated blood into the aorta and out to the body — which is why it's the strongest chamber."
+          "explanation": "The left ventricle is the thick-walled bottom-left chamber (on the patient's left, so the viewer's right). It pumps oxygenated blood into the aorta and out to the body — which is why it's the strongest chamber.",
+          "hide": [
+            "coronaries"
+          ]
         },
         {
           "question": "Which chamber is highlighted?",
@@ -31,7 +34,10 @@
             "Left ventricle"
           ],
           "answerIndex": 2,
-          "explanation": "The right atrium is the upper chamber on the patient's right. It receives deoxygenated blood from the body via the superior and inferior vena cava and holds the SA node."
+          "explanation": "The right atrium is the upper chamber on the patient's right. It receives deoxygenated blood from the body via the superior and inferior vena cava and holds the SA node.",
+          "hide": [
+            "coronaries"
+          ]
         },
         {
           "question": "Which structure is highlighted?",
@@ -44,7 +50,10 @@
             "Inferior vena cava"
           ],
           "answerIndex": 1,
-          "explanation": "The aorta is the big red vessel leaving the left ventricle. It carries oxygenated blood to the body. Its pressure is what the left ventricle's afterload is measured against."
+          "explanation": "The aorta is the big red vessel leaving the left ventricle. It carries oxygenated blood to the body. Its pressure is what the left ventricle's afterload is measured against.",
+          "hide": [
+            "coronaries"
+          ]
         },
         {
           "question": "Which structure is highlighted?",
@@ -57,7 +66,10 @@
             "Coronary artery"
           ],
           "answerIndex": 0,
-          "explanation": "The pulmonary artery leaves the right ventricle and carries deoxygenated blood to the lungs — the one artery in the body that carries blue blood. A PA catheter sits here."
+          "explanation": "The pulmonary artery leaves the right ventricle and carries deoxygenated blood to the lungs — the one artery in the body that carries blue blood. A PA catheter sits here.",
+          "hide": [
+            "coronaries"
+          ]
         },
         {
           "question": "Which chamber is highlighted?",
@@ -70,7 +82,78 @@
             "Right ventricle"
           ],
           "answerIndex": 3,
-          "explanation": "The right ventricle is the lower chamber on the patient's right. It pumps into the low-pressure pulmonary circulation, so its wall is much thinner than the left ventricle's."
+          "explanation": "The right ventricle is the lower chamber on the patient's right. It pumps into the low-pressure pulmonary circulation, so its wall is much thinner than the left ventricle's.",
+          "hide": [
+            "coronaries"
+          ]
+        },
+        {
+          "question": "Tap the left ventricle.",
+          "type": "hotspot",
+          "image": "visuals/heart-simplified.svg",
+          "target": "lv",
+          "targetLabel": "Left ventricle",
+          "hotspots": [
+            "ra",
+            "rv",
+            "la",
+            "lv"
+          ],
+          "explanation": "The left ventricle is the thick-walled chamber forming the apex on the patient's left (viewer's right). It pumps into the aorta, so it does the most work.",
+          "hide": [
+            "coronaries"
+          ]
+        },
+        {
+          "question": "Tap the aorta.",
+          "type": "hotspot",
+          "image": "visuals/heart-simplified.svg",
+          "target": "aorta",
+          "targetLabel": "Aorta",
+          "hotspots": [
+            "aorta",
+            "pa",
+            "svc",
+            "ivc"
+          ],
+          "explanation": "The aorta is the large red vessel rising from the centre and arching toward the patient's left. It carries oxygenated blood from the left ventricle to the body.",
+          "hide": [
+            "coronaries"
+          ]
+        },
+        {
+          "question": "Tap the chamber that receives blood from the vena cavae.",
+          "type": "hotspot",
+          "image": "visuals/heart-simplified.svg",
+          "target": "ra",
+          "targetLabel": "Right atrium",
+          "hotspots": [
+            "ra",
+            "rv",
+            "la",
+            "lv"
+          ],
+          "explanation": "The superior and inferior vena cava drain into the right atrium — the first stop for deoxygenated blood returning from the body.",
+          "hide": [
+            "coronaries"
+          ]
+        },
+        {
+          "question": "Tap the vessel that carries blood to the lungs.",
+          "type": "hotspot",
+          "image": "visuals/heart-simplified.svg",
+          "target": "pa",
+          "targetLabel": "Pulmonary artery",
+          "hotspots": [
+            "aorta",
+            "pa",
+            "svc",
+            "ivc"
+          ],
+          "explanation": "The pulmonary artery leaves the right ventricle and carries deoxygenated blood to the lungs. It's blue in diagrams because its blood is low in oxygen.",
+          "hide": [
+            "coronaries"
+          ]
         }
       ]
     },
@@ -485,6 +568,21 @@
           ],
           "answerIndex": 0,
           "explanation": "In tamponade, tension pneumothorax, or a large PE, the heart can't fill or eject because something is mechanically in the way. Relieving the obstruction is the treatment."
+        },
+        {
+          "question": "Which findings fit cardiogenic shock? Pick every correct answer.",
+          "loaded": true,
+          "choices": [
+            "Cold, clammy skin",
+            "High filling pressures (PAOP)",
+            "Low systemic vascular resistance",
+            "Warm, flushed skin"
+          ],
+          "answerIndex": [
+            0,
+            1
+          ],
+          "explanation": "A failing pump backs blood up (high PAOP) and the body clamps down to compensate (high SVR, cold clammy skin). Warm skin and low SVR are the picture of distributive shock, not cardiogenic."
         }
       ]
     },
@@ -654,6 +752,21 @@
           ],
           "answerIndex": 3,
           "explanation": "If the lungs cause an acidosis, the kidneys slowly hold onto bicarbonate; if metabolism causes it, the lungs quickly blow off CO2. Compensation moves pH toward normal but rarely fully corrects it."
+        },
+        {
+          "question": "ABG: pH 7.28, PaCO2 60, HCO3 26. Which statements are true? Pick every correct answer.",
+          "loaded": true,
+          "choices": [
+            "This is a respiratory acidosis",
+            "It is uncompensated",
+            "It is a metabolic acidosis",
+            "The patient is hyperventilating"
+          ],
+          "answerIndex": [
+            0,
+            1
+          ],
+          "explanation": "Low pH with a high CO2 is respiratory acidosis. Bicarbonate is still normal (24–26), so the kidneys have not yet compensated. A hyperventilating patient would have a low CO2."
         }
       ]
     },
@@ -1046,6 +1159,21 @@
           ],
           "answerIndex": 1,
           "explanation": "High potassium speeds repolarization, producing tall narrow T waves. As it worsens, P waves flatten and the QRS widens toward a sine wave."
+        },
+        {
+          "question": "A patient's potassium is 6.8 with peaked T waves. Which interventions help? Pick every correct answer.",
+          "loaded": true,
+          "choices": [
+            "IV calcium to stabilise the heart",
+            "Insulin with dextrose to shift potassium into cells",
+            "A potassium-sparing diuretic",
+            "Normal saline bolus only"
+          ],
+          "answerIndex": [
+            0,
+            1
+          ],
+          "explanation": "Calcium protects the myocardium while insulin/dextrose (and often albuterol or bicarbonate) shift potassium into cells; removal then follows (diuretics, binders, dialysis). Potassium-sparing diuretics raise potassium, and saline alone does not treat it."
         }
       ]
     },

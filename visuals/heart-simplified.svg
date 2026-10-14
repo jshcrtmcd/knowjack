@@ -1,49 +1,80 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" font-family="system-ui, sans-serif">
-  <title>Simplified heart — four chambers and great vessels (anatomical view: patient's right is on the left)</title>
-  <!-- great vessels -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 370" font-family="system-ui, sans-serif">
+  <title>Cartoon heart, anterior view — patient's right is on the viewer's left</title>
+  <defs>
+    <clipPath id="heartClip"><path id="sil" d="M112 128 C 86 166, 84 226, 126 276 C 160 316, 220 338, 262 346 C 282 334, 310 300, 330 258 C 348 218, 346 170, 326 138 C 306 108, 266 94, 232 104 C 214 92, 180 92, 162 108 C 142 96, 122 110, 112 128 Z"/></clipPath>
+  </defs>
+
+  <!-- Descending aorta, behind the heart on the patient's left -->
+  <g id="desc-aorta" fill="#e86a6a" stroke="#8c1f1f" stroke-width="3">
+    <path d="M322 100 C 336 126, 340 158, 332 190 C 328 204, 326 214, 328 222 L 356 220 C 358 206, 360 194, 364 180 C 372 150, 368 118, 350 94 Z"/>
+  </g>
+
+  <!-- Superior vena cava: enters the right atrium from above on the patient's right -->
   <g id="svc" fill="#7fb3e6" stroke="#2b5c8a" stroke-width="3">
-    <rect x="86" y="18" width="34" height="78" rx="14"/>
+    <path d="M104 30 C 102 62, 104 94, 112 128 L 144 120 C 138 90, 136 60, 136 30 Z"/>
   </g>
+
+  <!-- Aorta: rises from the centre and arches toward the patient's left -->
+  <g id="aorta" fill="#f08a8a" stroke="#8c1f1f" stroke-width="3">
+    <path d="M194 112 C 194 76, 212 46, 250 36 C 290 26, 328 44, 344 76 C 348 84, 350 90, 350 94 L 322 100 C 314 80, 296 64, 272 62 C 244 60, 226 82, 228 112 Z"/>
+    <path d="M250 40 L 246 16 L 260 16 L 263 38 Z"/>
+    <path d="M280 42 L 280 16 L 294 16 L 296 46 Z"/>
+    <path d="M310 54 L 314 22 L 328 26 L 324 66 Z"/>
+  </g>
+
+  <!-- Pulmonary trunk: leaves the right ventricle in front, splits under the arch -->
+  <g id="pa" fill="#6fa8dc" stroke="#2b5c8a" stroke-width="3">
+    <path d="M158 130 C 150 104, 164 82, 190 76 C 212 72, 232 84, 236 100 L 212 108 C 208 98, 198 94, 190 98 C 178 102, 176 116, 180 132 Z"/>
+    <path d="M236 100 C 262 96, 292 104, 310 118 L 300 132 C 284 120, 262 114, 238 118 Z"/>
+    <path d="M166 92 C 136 86, 100 92, 78 108 L 86 124 C 106 110, 134 104, 164 108 Z"/>
+  </g>
+
+  <!-- Inferior vena cava: enters the right atrium from below -->
   <g id="ivc" fill="#7fb3e6" stroke="#2b5c8a" stroke-width="3">
-    <rect x="86" y="196" width="34" height="80" rx="14"/>
+    <path d="M96 252 C 94 280, 96 310, 106 344 L 138 342 C 132 310, 130 280, 132 254 Z"/>
   </g>
-  <g id="pa" fill="#7fb3e6" stroke="#2b5c8a" stroke-width="3">
-    <path d="M152 86 c0 -40 30 -60 70 -60 h60 v26 h-60 c-22 0 -38 12 -38 34 z"/>
+
+  <g clip-path="url(#heartClip)">
+    <path d="M0 0 H400 V370 H0 Z" fill="#e97676"/>
+    <!-- Right atrium -->
+    <g id="ra" fill="#a9d0f5" stroke="#2b5c8a" stroke-width="3">
+      <path d="M92 118 L 184 118 C 190 144, 186 168, 172 188 C 150 196, 118 194, 94 182 Z"/>
+    </g>
+    <!-- Right ventricle (thin wall, front of the heart) -->
+    <g id="rv" fill="#7db5e3" stroke="#2b5c8a" stroke-width="3">
+      <path d="M94 182 C 118 194, 150 196, 172 188 C 198 194, 214 218, 230 262 C 240 290, 248 316, 256 350 C 206 340, 150 310, 118 266 C 96 236, 90 208, 94 182 Z"/>
+    </g>
+    <!-- Left atrium (mostly behind) -->
+    <g id="la" fill="#f7b0b0" stroke="#8c1f1f" stroke-width="3">
+      <path d="M192 112 L 332 112 C 340 134, 340 156, 332 176 C 298 186, 248 184, 216 178 C 204 158, 196 136, 192 112 Z"/>
+    </g>
+    <!-- Left ventricle (thick wall, forms the apex) -->
+    <g id="lv" fill="#e55a5a" stroke="#8c1f1f" stroke-width="3">
+      <path d="M216 178 C 248 184, 298 186, 332 176 C 352 220, 336 282, 300 320 C 288 332, 274 342, 262 348 C 254 318, 244 290, 230 262 C 214 218, 198 194, 172 188 C 190 184, 204 180, 216 178 Z"/>
+    </g>
+    <!-- Septum -->
+    <g id="septum" fill="#c9a27c" stroke="#7a5230" stroke-width="2">
+      <path d="M172 188 C 198 194, 214 218, 230 262 C 240 290, 248 316, 256 350 L 242 352 C 236 318, 228 290, 218 264 C 204 224, 190 204, 164 198 Z"/>
+    </g>
+    <g id="tricuspid" stroke="#1a1030" stroke-width="4" stroke-linecap="round" fill="none">
+      <path d="M104 186 l 14 -6 l 14 6 l 14 -6 l 14 6"/>
+    </g>
+    <g id="mitral" stroke="#1a1030" stroke-width="4" stroke-linecap="round" fill="none">
+      <path d="M236 180 l 16 -6 l 16 6 l 16 -6 l 16 6"/>
+    </g>
   </g>
-  <g id="aorta" fill="#f08a8a" stroke="#9c2b2b" stroke-width="3">
-    <path d="M184 110 c0 -70 50 -90 96 -90 h50 v26 h-50 c-34 0 -64 12 -64 64 z"/>
+
+  <use href="#sil" fill="none" stroke="#5a1414" stroke-width="5" stroke-linejoin="round"/>
+
+  <!-- Coronary arteries (surface vessels; used by the CVICU bank) -->
+  <g id="coronaries" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#ffd166" stroke-width="4" opacity=".5">
+    <g id="rca"><path d="M170 134 C 142 156, 112 184, 108 224 C 106 250, 124 282, 150 304"/></g>
+    <g id="lad"><path d="M218 136 C 226 168, 238 206, 248 246 C 254 270, 258 300, 260 330"/></g>
+    <g id="lcx"><path d="M218 136 C 252 142, 296 156, 322 186 C 334 202, 336 228, 330 252"/></g>
   </g>
-  <!-- chambers -->
-  <g id="ra" fill="#9fc8f0" stroke="#2b5c8a" stroke-width="3">
-    <path d="M78 96 h90 v86 q-45 10 -90 0 z" />
-  </g>
-  <g id="rv" fill="#6fa8dc" stroke="#2b5c8a" stroke-width="3">
-    <path d="M78 186 q45 10 90 0 v30 q-30 60 -90 20 z"/>
-  </g>
-  <g id="la" fill="#f7b0b0" stroke="#9c2b2b" stroke-width="3">
-    <path d="M186 110 h100 v76 q-50 10 -100 0 z"/>
-  </g>
-  <g id="lv" fill="#e96a6a" stroke="#9c2b2b" stroke-width="3">
-    <path d="M186 190 q50 10 100 0 v24 q-10 70 -100 54 z"/>
-  </g>
-  <!-- septum -->
-  <g id="septum" fill="#c9a27c" stroke="#7a5230" stroke-width="2">
-    <rect x="170" y="96" width="14" height="172" rx="6"/>
-  </g>
-  <!-- valves -->
-  <g id="tricuspid" stroke="#1a1030" stroke-width="4" stroke-linecap="round" fill="none">
-    <path d="M92 184 l20 -6 l20 6 l20 -6 l20 6"/>
-  </g>
-  <g id="mitral" stroke="#1a1030" stroke-width="4" stroke-linecap="round" fill="none">
-    <path d="M196 188 l24 -6 l24 6 l24 -6 l24 6"/>
-  </g>
-  <!-- labels (light, so highlighting still has to be read) -->
+
   <g font-size="12" fill="#1a1030" opacity=".55">
-    <text x="26" y="48">from body</text>
-    <text x="26" y="232">from body</text>
-    <text x="290" y="60">to lungs</text>
-    <text x="296" y="142">to body</text>
-    <text x="110" y="300" font-size="11">patient's RIGHT</text>
-    <text x="214" y="300" font-size="11">patient's LEFT</text>
+    <text x="52" y="364">patient's RIGHT</text>
+    <text x="268" y="364">patient's LEFT</text>
   </g>
 </svg>

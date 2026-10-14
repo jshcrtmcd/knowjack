@@ -54,6 +54,20 @@
     timeout() {
       tone({ freq: 400, endFreq: 120, dur: 0.6, type: 'sawtooth', gain: 0.18 });
     },
+    whoosh() {
+      // Curtain: filtered noise sweep approximated with a fast sawtooth slide.
+      tone({ freq: 90, endFreq: 400, dur: 0.5, type: 'sawtooth', gain: 0.05 });
+      tone({ freq: 500, endFreq: 120, dur: 0.5, type: 'triangle', gain: 0.05, delay: 0.3 });
+    },
+    poof() {
+      tone({ freq: 700, endFreq: 90, dur: 0.35, type: 'sawtooth', gain: 0.12 });
+      tone({ freq: 1800, endFreq: 300, dur: 0.25, type: 'square', gain: 0.05 });
+    },
+    loaded() {
+      tone({ freq: 196, dur: 0.14, type: 'square', gain: 0.14 });
+      tone({ freq: 196, dur: 0.14, type: 'square', gain: 0.14, delay: 0.16 });
+      tone({ freq: 294, dur: 0.4, type: 'square', gain: 0.16, delay: 0.32 });
+    },
     fanfare() {
       [523, 659, 784, 1046].forEach((f, i) => tone({ freq: f, dur: 0.18, type: 'square', gain: 0.14, delay: i * 0.12 }));
       tone({ freq: 1046, dur: 0.5, type: 'triangle', gain: 0.16, delay: 0.5 });

@@ -21,7 +21,8 @@
 
     <!-- Host panel: visible on most screens -->
     <div id="host" class="host" aria-live="polite">
-      <div class="host-avatar" aria-hidden="true">
+      <div id="hostAvatar" class="host-avatar" aria-hidden="true">
+        <div id="smoke" class="smoke"><i></i><i></i><i></i><i></i><i></i><i></i></div>
         <svg viewBox="0 0 64 64" width="56" height="56">
           <path d="M14 40 q-8 -26 18 -32 q26 -6 20 30 q-4 -2 -6 -10 q-16 6 -26 0 q-2 8 -6 12 z" fill="#3a1d6e"/>
           <circle cx="32" cy="34" r="19" fill="#f1c9a5"/>
@@ -117,13 +118,16 @@
         <div id="timerText" class="timer-text">15</div>
       </div>
 
+      <div id="loadedBanner" class="loaded-banner" hidden>💣 Loaded Question — triple time, no eliminations, pick every correct answer</div>
       <div id="questionCard" class="question-card">
         <div id="questionVisual" class="visual" hidden></div>
         <p id="questionText" class="question-text"></p>
       </div>
 
       <div id="readHint" class="read-hint" hidden>Read it… options in <span id="readCount">2</span></div>
+      <div id="hotspotHint" class="hotspot-hint" hidden>👆 Tap the right spot on the picture</div>
       <div id="choices" class="choices" role="group" aria-label="Answer choices"></div>
+      <button id="lockInBtn" class="btn btn-primary lock-in" type="button" hidden>Lock in</button>
 
       <div id="feedback" class="feedback" hidden>
         <div id="feedbackVerdict" class="feedback-verdict"></div>
@@ -159,6 +163,8 @@
     </section>
 
   </main>
+
+  <div id="curtain" class="curtain" aria-hidden="true"><div class="curtain-panel left"></div><div class="curtain-panel right"></div></div>
 
   <script src="js/validator.js"></script>
   <script src="js/audio.js"></script>

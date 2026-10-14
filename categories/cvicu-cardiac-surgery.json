@@ -1,0 +1,879 @@
+{
+  "category": "Cardiac Surgery Concepts for CVICU Nurses",
+  "description": "What happens to a heart during and after surgery, and what the numbers, tubes and wires are telling you. Concept-first and quick; verify specifics against your unit's protocols and current references.",
+  "concepts": [
+    {
+      "id": "cvicu-coronary-anatomy",
+      "title": "Coronary anatomy and grafts (visual)",
+      "prerequisites": [],
+      "questions": [
+        {
+          "question": "Which coronary artery is highlighted? It runs down the front of the heart between the ventricles.",
+          "image": "visuals/heart-simplified.svg",
+          "highlight": "lad",
+          "choices": [
+            "Right coronary artery (RCA)",
+            "Left circumflex (LCx)",
+            "Left main",
+            "Left anterior descending (LAD)"
+          ],
+          "answerIndex": 3,
+          "explanation": "The LAD runs down the anterior interventricular groove and supplies most of the left ventricle's front wall and septum — which is why an LAD blockage is nicknamed the 'widow-maker'.",
+          "show": [
+            "coronaries"
+          ]
+        },
+        {
+          "question": "Tap the right coronary artery.",
+          "type": "hotspot",
+          "image": "visuals/heart-simplified.svg",
+          "target": "rca",
+          "targetLabel": "Right coronary artery",
+          "hotspots": [
+            "rca",
+            "lad",
+            "lcx"
+          ],
+          "explanation": "The RCA wraps around the patient's right side of the heart. In most people it supplies the SA and AV nodes, so RCA problems often show up as bradycardia or heart block.",
+          "show": [
+            "coronaries"
+          ]
+        },
+        {
+          "question": "Tap the artery that wraps around the patient's left side toward the back of the heart.",
+          "type": "hotspot",
+          "image": "visuals/heart-simplified.svg",
+          "target": "lcx",
+          "targetLabel": "Left circumflex",
+          "hotspots": [
+            "rca",
+            "lad",
+            "lcx"
+          ],
+          "explanation": "The circumflex curves around the left atrioventricular groove to supply the lateral and posterior left ventricle. Lateral-wall changes on the ECG point here.",
+          "show": [
+            "coronaries"
+          ]
+        },
+        {
+          "question": "In a CABG, the internal mammary (thoracic) artery is usually grafted to which vessel?",
+          "choices": [
+            "The right coronary artery",
+            "The circumflex",
+            "The LAD",
+            "The aorta"
+          ],
+          "answerIndex": 2,
+          "explanation": "The left internal mammary artery to the LAD is the workhorse graft: it stays open for decades and protects the most important territory. Vein grafts cover the other targets."
+        },
+        {
+          "question": "Why do saphenous vein grafts need a connection to the aorta but a mammary artery graft does not?",
+          "choices": [
+            "Veins are too small to reach the aorta",
+            "The mammary artery stays attached to its own blood supply; a vein is a free segment",
+            "Arteries clot more easily",
+            "The aorta cannot accept arterial grafts"
+          ],
+          "answerIndex": 1,
+          "explanation": "A pedicled mammary artery keeps its origin from the subclavian, so only the far end is sewn to the coronary. A vein is harvested as a free piece, so it needs an inflow (aorta) and an outflow (coronary)."
+        }
+      ]
+    },
+    {
+      "id": "cvicu-cpb",
+      "title": "Cardiopulmonary bypass basics",
+      "prerequisites": [],
+      "questions": [
+        {
+          "question": "During cardiopulmonary bypass, the machine takes over which two jobs?",
+          "choices": [
+            "Pumping blood and oxygenating it",
+            "Filtering blood and making urine",
+            "Breathing and digesting",
+            "Pacing and defibrillating"
+          ],
+          "answerIndex": 0,
+          "explanation": "The heart-lung machine drains venous blood, oxygenates it and removes CO2, then pumps it back into the aorta — so the surgeon can stop the heart and work on a still, bloodless field."
+        },
+        {
+          "question": "Why is the patient fully heparinised before going on bypass?",
+          "choices": [
+            "To lower blood pressure",
+            "To prevent infection",
+            "To thin the blood for easier suction",
+            "Blood touching the circuit's plastic would otherwise clot"
+          ],
+          "answerIndex": 3,
+          "explanation": "Artificial surfaces activate clotting. Heparin keeps the circuit patent; protamine reverses it at the end, which is why post-op bleeding can involve heparin 'rebound'."
+        },
+        {
+          "question": "Cardioplegia is given to:",
+          "choices": [
+            "Speed the heart up after surgery",
+            "Prevent arrhythmias in the ICU",
+            "Stop the heart and protect it while it has no blood flow",
+            "Dissolve clots in the grafts"
+          ],
+          "answerIndex": 2,
+          "explanation": "A cold, high-potassium solution arrests the heart in diastole and lowers its energy needs so the muscle survives the ischemic time of the operation."
+        },
+        {
+          "question": "Bypass triggers a whole-body inflammatory response. Which post-op effect is this most responsible for?",
+          "choices": [
+            "Hyperglycaemia only",
+            "Leaky vessels, fluid shifts and vasodilation",
+            "High potassium",
+            "A faster heart rate"
+          ],
+          "answerIndex": 1,
+          "explanation": "Blood contact with the circuit activates complement and white cells. Expect capillary leak, oedema, low SVR and a need for volume and sometimes vasopressors in the first hours."
+        },
+        {
+          "question": "Which problems trace back to cardiopulmonary bypass itself? Pick every correct answer.",
+          "loaded": true,
+          "choices": [
+            "Hypothermia on arrival to the ICU",
+            "Low systemic vascular resistance",
+            "Immediate hyperkalaemia from cardioplegia is permanent",
+            "Platelet dysfunction and bleeding"
+          ],
+          "answerIndex": [
+            0,
+            1,
+            3
+          ],
+          "explanation": "The circuit damages platelets, cools the patient and triggers vasodilating inflammation. Cardioplegia potassium is washed out and transient — it does not cause lasting hyperkalaemia."
+        }
+      ]
+    },
+    {
+      "id": "cvicu-postop-hemo",
+      "title": "Post-op hemodynamic goals",
+      "prerequisites": [
+        "cvicu-cpb"
+      ],
+      "questions": [
+        {
+          "question": "In the first hours after cardiac surgery, the most common reason for low cardiac output is:",
+          "choices": [
+            "Too much afterload",
+            "Bradycardia",
+            "Hypoglycaemia",
+            "Low preload (the patient is 'dry')"
+          ],
+          "answerIndex": 3,
+          "explanation": "Rewarming vasodilates, capillaries leak and the chest tubes drain. Before reaching for an inotrope, check filling pressures and give volume if preload is low."
+        },
+        {
+          "question": "Why does blood pressure often drop as a post-op patient rewarms?",
+          "choices": [
+            "The heart beats slower when warm",
+            "Warm blood carries less oxygen",
+            "Warming dilates vessels, dropping SVR and unmasking low volume",
+            "Rewarming causes bleeding"
+          ],
+          "answerIndex": 2,
+          "explanation": "Cold patients are clamped down. As they warm, the 'container' enlarges and the same volume no longer fills it — expect to give fluid during rewarming."
+        },
+        {
+          "question": "A MAP that is too high after surgery is dangerous mainly because it:",
+          "choices": [
+            "Causes bradycardia",
+            "Strains fresh suture lines and grafts and increases bleeding",
+            "Lowers urine output",
+            "Causes hypoglycaemia"
+          ],
+          "answerIndex": 1,
+          "explanation": "Fresh anastomoses and the aortic cannulation site can bleed or tear under pressure. Most units keep MAP in a target window with a vasodilator infusion ready."
+        },
+        {
+          "question": "Shivering after surgery is treated aggressively because it:",
+          "choices": [
+            "Sharply raises oxygen consumption and CO2 production",
+            "Causes hypokalaemia",
+            "Pulls out chest tubes",
+            "Lowers blood pressure"
+          ],
+          "answerIndex": 0,
+          "explanation": "Shivering can multiply metabolic demand several-fold, which a recovering heart cannot meet. Warming and medication (e.g., meperidine) stop it."
+        },
+        {
+          "question": "'Cardiac index' is cardiac output divided by:",
+          "choices": [
+            "Heart rate",
+            "Weight in kg",
+            "Haemoglobin",
+            "Body surface area"
+          ],
+          "answerIndex": 3,
+          "explanation": "Indexing to body surface area lets the same target apply to a small and a large patient. A cardiac index around 2.2 or above is a common post-op goal."
+        }
+      ]
+    },
+    {
+      "id": "cvicu-bleeding-tamponade",
+      "title": "Bleeding, coagulopathy and tamponade",
+      "prerequisites": [
+        "cvicu-cpb"
+      ],
+      "questions": [
+        {
+          "question": "Chest tube output that is steadily high in the first hours should make you think first of:",
+          "choices": [
+            "Normal post-op drainage",
+            "A blocked tube",
+            "Surgical or coagulopathic bleeding that needs attention now",
+            "Fluid overload"
+          ],
+          "answerIndex": 2,
+          "explanation": "Sustained heavy drainage is the warning sign; trends matter more than one number. Check coagulation, temperature and pressure, and notify the surgeon early."
+        },
+        {
+          "question": "Hypothermia worsens post-op bleeding because:",
+          "choices": [
+            "Cold increases blood pressure",
+            "Clotting enzymes and platelets work poorly when cold",
+            "Cold dilates vessels",
+            "Cold dissolves clots"
+          ],
+          "answerIndex": 1,
+          "explanation": "The coagulation cascade is a set of enzyme reactions that slow down in the cold, and platelets stick less. Warming the patient is a bleeding treatment."
+        },
+        {
+          "question": "Chest tube output suddenly stops, blood pressure falls, filling pressures rise and heart sounds are muffled. First thought:",
+          "choices": [
+            "Cardiac tamponade",
+            "Hypovolaemia",
+            "Pulmonary embolism",
+            "Sepsis"
+          ],
+          "answerIndex": 0,
+          "explanation": "Blood collecting around the heart compresses it: the heart cannot fill, so pressures equalise and output falls. Tamponade after surgery is a surgical emergency."
+        },
+        {
+          "question": "Tamponade is a problem of:",
+          "choices": [
+            "Contractility — the muscle is weak",
+            "Rhythm — the heart beats too slowly",
+            "Oxygenation — the lungs fail",
+            "Filling — the compressed heart cannot accept blood"
+          ],
+          "answerIndex": 3,
+          "explanation": "Pressure outside the heart equals or exceeds the pressure inside, so diastolic filling stops. Draining the pericardium restores output immediately."
+        },
+        {
+          "question": "Which findings together point to tamponade rather than simple hypovolaemia? Pick every correct answer.",
+          "loaded": true,
+          "choices": [
+            "Low CVP with low blood pressure",
+            "Rising CVP with falling blood pressure",
+            "Narrowing pulse pressure",
+            "A sudden drop in chest-tube drainage"
+          ],
+          "answerIndex": [
+            1,
+            2,
+            3
+          ],
+          "explanation": "Tamponade raises filling pressures while output falls; hypovolaemia lowers both. A tube that suddenly stops draining in a bleeding patient suggests blood is now collecting around the heart instead."
+        }
+      ]
+    },
+    {
+      "id": "cvicu-chest-tubes",
+      "title": "Chest tubes and mediastinal drainage",
+      "prerequisites": [
+        "cvicu-bleeding-tamponade"
+      ],
+      "questions": [
+        {
+          "question": "After cardiac surgery, mediastinal chest tubes mainly:",
+          "choices": [
+            "Re-inflate the lungs",
+            "Drain blood from around the heart so it cannot cause tamponade",
+            "Deliver medication",
+            "Measure cardiac output"
+          ],
+          "answerIndex": 1,
+          "explanation": "Mediastinal tubes sit around the heart; pleural tubes sit around the lungs. The mediastinal ones are the tamponade safety valve, so their patency matters."
+        },
+        {
+          "question": "Continuous bubbling in the water-seal chamber of a pleural chest tube system means:",
+          "choices": [
+            "An air leak — from the lung or the tubing connections",
+            "Normal function",
+            "The suction is too low",
+            "The tube is blocked"
+          ],
+          "answerIndex": 0,
+          "explanation": "Occasional bubbling with coughing can be normal; constant bubbling means air is entering the system. Check connections first, then assess the patient."
+        },
+        {
+          "question": "Why is routine 'stripping' (milking) of chest tubes discouraged?",
+          "choices": [
+            "It causes infection",
+            "It dislodges the tube",
+            "It is too time-consuming",
+            "It creates very high negative pressure that can damage tissue and grafts"
+          ],
+          "answerIndex": 3,
+          "explanation": "Stripping can generate hundreds of cmH2O of suction at the tube tip. Gentle hand-over-hand squeezing or simply ensuring the tube is not kinked is the accepted approach."
+        },
+        {
+          "question": "The water-seal chamber should 'tidal' (rise and fall with breathing) because:",
+          "choices": [
+            "It means the lung has re-expanded",
+            "It indicates infection",
+            "It shows the tube is open and communicating with the pleural space",
+            "It shows the suction is off"
+          ],
+          "answerIndex": 2,
+          "explanation": "Breathing changes intrathoracic pressure, which moves the water column if the tube is patent. Loss of tidaling means either a blocked tube or a fully re-expanded lung."
+        }
+      ]
+    },
+    {
+      "id": "cvicu-pacing",
+      "title": "Epicardial pacing wires",
+      "prerequisites": [
+        "cvicu-postop-hemo"
+      ],
+      "questions": [
+        {
+          "question": "Temporary epicardial pacing wires are placed at the end of surgery because:",
+          "choices": [
+            "They monitor the ECG",
+            "Post-op bradycardia and heart block are common and the wires let you pace immediately",
+            "They prevent atrial fibrillation",
+            "They deliver cardioplegia"
+          ],
+          "answerIndex": 1,
+          "explanation": "Swelling, cold and surgery near the conduction system commonly slow the heart. The wires give a pacing option without a transvenous line; they are removed before discharge."
+        },
+        {
+          "question": "'Capture' on a pacemaker means:",
+          "choices": [
+            "Each pacing spike is followed by a heartbeat",
+            "The pacemaker sees the patient's own beats",
+            "The battery is full",
+            "The wires are secured"
+          ],
+          "answerIndex": 0,
+          "explanation": "Capture is the heart responding to the stimulus. If you see spikes with no QRS after them, output is too low or the wire has failed — raise the output and check connections."
+        },
+        {
+          "question": "'Sensing' on a pacemaker means:",
+          "choices": [
+            "The pacemaker fires faster when the patient moves",
+            "The pacemaker records the rhythm",
+            "The pacemaker measures blood pressure",
+            "The pacemaker detects the patient's own beats and holds back when they occur"
+          ],
+          "answerIndex": 3,
+          "explanation": "A pacemaker that cannot sense fires regardless of the patient's rhythm; a spike landing on a T wave can trigger ventricular tachycardia. Sensitivity is set so native beats inhibit it."
+        },
+        {
+          "question": "Why do unused epicardial wires get insulated (e.g., capped or taped)?",
+          "choices": [
+            "To keep them clean",
+            "To prevent them pulling out",
+            "Stray current reaching the heart through the wires can trigger arrhythmias",
+            "To stop them pacing by accident"
+          ],
+          "answerIndex": 2,
+          "explanation": "The wires are a direct electrical path to the myocardium. Even tiny leakage currents can cause ventricular fibrillation, so exposed ends are covered and handled with gloves."
+        },
+        {
+          "question": "Pacing the atrium instead of only the ventricle preserves:",
+          "choices": [
+            "The heart rate only",
+            "Atrial kick, which adds to ventricular filling and cardiac output",
+            "The QRS width",
+            "Blood pressure independent of rhythm"
+          ],
+          "answerIndex": 1,
+          "explanation": "The atrial contraction tops off the ventricle before it fires. Losing it can cost a meaningful share of cardiac output in a stiff post-op heart, so AV-sequential pacing is preferred when the AV node conducts."
+        }
+      ]
+    },
+    {
+      "id": "cvicu-arrhythmias",
+      "title": "Post-op atrial fibrillation and rhythm problems",
+      "prerequisites": [
+        "cvicu-pacing"
+      ],
+      "questions": [
+        {
+          "question": "The most common arrhythmia after cardiac surgery is:",
+          "choices": [
+            "Atrial fibrillation",
+            "Ventricular fibrillation",
+            "Third-degree heart block",
+            "Torsades de pointes"
+          ],
+          "answerIndex": 0,
+          "explanation": "Post-op AF affects a large share of patients, typically peaking around days 2–3 as inflammation and catecholamines peak. Beta-blockers are the main prevention strategy."
+        },
+        {
+          "question": "Why does new atrial fibrillation drop blood pressure in a post-op patient?",
+          "choices": [
+            "AF makes the ventricles contract harder",
+            "AF dilates the arteries",
+            "AF causes bleeding",
+            "Loss of atrial kick plus a fast, irregular rate cuts filling time and output"
+          ],
+          "answerIndex": 3,
+          "explanation": "Quivering atria add nothing to filling, and a rapid irregular response shortens diastole. A stiff, recently operated ventricle tolerates this badly."
+        },
+        {
+          "question": "Low magnesium and potassium matter after surgery because they:",
+          "choices": [
+            "Cause bradycardia",
+            "Lower blood pressure",
+            "Make the heart electrically irritable and promote AF and ventricular ectopy",
+            "Slow clotting"
+          ],
+          "answerIndex": 2,
+          "explanation": "Bypass, diuretics and shifts deplete both. Many units replace to keep potassium and magnesium in the upper-normal range to reduce arrhythmias."
+        },
+        {
+          "question": "A patient in new AF who is hypotensive and symptomatic needs:",
+          "choices": [
+            "An oral beta-blocker and observation",
+            "Prompt synchronised cardioversion",
+            "A fluid bolus only",
+            "Nothing — it usually resolves"
+          ],
+          "answerIndex": 1,
+          "explanation": "Unstable means act now. Rate control or chemical cardioversion is for the stable patient; the unstable one gets electricity, synchronised to avoid the T wave."
+        }
+      ]
+    },
+    {
+      "id": "cvicu-vasoactives",
+      "title": "Vasoactive and inotrope concepts",
+      "prerequisites": [
+        "cvicu-postop-hemo"
+      ],
+      "questions": [
+        {
+          "question": "An inotrope is a drug that mainly:",
+          "choices": [
+            "Increases the force of contraction",
+            "Constricts blood vessels",
+            "Slows the heart rate",
+            "Dilates the coronary arteries"
+          ],
+          "answerIndex": 0,
+          "explanation": "Inotropes (dobutamine, milrinone, epinephrine) make the pump squeeze harder. They are for low output from a weak heart, not for low pressure from an empty one."
+        },
+        {
+          "question": "A vasopressor is a drug that mainly:",
+          "choices": [
+            "Strengthens contraction",
+            "Lowers afterload",
+            "Increases urine output",
+            "Constricts vessels to raise SVR and blood pressure"
+          ],
+          "answerIndex": 3,
+          "explanation": "Norepinephrine, vasopressin and phenylephrine raise vascular tone. They fix a 'container too big' problem — post-bypass vasoplegia — not a weak-pump problem."
+        },
+        {
+          "question": "Milrinone is useful after cardiac surgery because it:",
+          "choices": [
+            "Raises blood pressure strongly",
+            "Slows the heart",
+            "Improves contractility and dilates vessels, lowering afterload",
+            "Is reversed quickly"
+          ],
+          "answerIndex": 2,
+          "explanation": "An 'inodilator' helps a struggling ventricle eject against less resistance, which is ideal for low output with high filling pressures — but it can drop blood pressure, so a pressor is often paired with it."
+        },
+        {
+          "question": "Nitroglycerin or nicardipine after surgery are used to:",
+          "choices": [
+            "Raise cardiac output",
+            "Control high blood pressure that threatens graft and suture lines",
+            "Treat bradycardia",
+            "Prevent atrial fibrillation"
+          ],
+          "answerIndex": 1,
+          "explanation": "Vasodilators lower afterload and pressure. Nitroglycerin also dilates coronaries and grafts, which is why it is often the first choice early after CABG."
+        },
+        {
+          "question": "Match the problem to the drug class. Which pairings are correct? Pick every correct answer.",
+          "loaded": true,
+          "choices": [
+            "Low pressure with low SVR → vasopressor",
+            "Low pressure with low CVP → vasopressor first",
+            "High pressure after CABG → vasodilator",
+            "Low output with high filling pressures → inotrope"
+          ],
+          "answerIndex": [
+            0,
+            2,
+            3
+          ],
+          "explanation": "A weak pump gets an inotrope, a dilated container gets a pressor, and a hypertensive patient gets a dilator. Low pressure with low CVP is an empty tank — give volume first, not a pressor."
+        }
+      ]
+    },
+    {
+      "id": "cvicu-iabp",
+      "title": "Intra-aortic balloon pump (visual)",
+      "prerequisites": [
+        "cvicu-vasoactives"
+      ],
+      "questions": [
+        {
+          "question": "The balloon inflates during which part of the cardiac cycle?",
+          "choices": [
+            "Systole — while the ventricle ejects",
+            "Throughout the whole cycle",
+            "Only during the P wave",
+            "Diastole — right after the aortic valve closes"
+          ],
+          "answerIndex": 3,
+          "explanation": "Inflating in diastole pushes blood back toward the coronary arteries (which fill in diastole), raising coronary perfusion. Inflating in systole would fight the ejecting ventricle."
+        },
+        {
+          "question": "The balloon deflates just before systole so that:",
+          "choices": [
+            "Coronary flow increases",
+            "Heart rate rises",
+            "The ventricle ejects into a 'vacuum' — lower afterload, less work",
+            "The balloon can refill with gas"
+          ],
+          "answerIndex": 2,
+          "explanation": "Rapid deflation drops aortic pressure right before the valve opens. The heart pushes against less resistance, so stroke volume rises and oxygen demand falls."
+        },
+        {
+          "question": "What does the highlighted peak represent on this arterial waveform?",
+          "image": "visuals/iabp-waveform.svg",
+          "highlight": "augmentation",
+          "choices": [
+            "The patient's own systolic peak",
+            "Diastolic augmentation from balloon inflation",
+            "The dicrotic notch",
+            "A ventricular ectopic beat"
+          ],
+          "answerIndex": 1,
+          "explanation": "The tall extra peak after the dicrotic notch is the balloon inflating. With good timing it is higher than the patient's own systolic peak — that is the coronary perfusion boost."
+        },
+        {
+          "question": "Tap the dicrotic notch on the unassisted beat — the point where the balloon should inflate.",
+          "type": "hotspot",
+          "image": "visuals/iabp-waveform.svg",
+          "target": "dicrotic-notch",
+          "targetLabel": "Dicrotic notch",
+          "hotspots": [
+            "unassisted-systole",
+            "dicrotic-notch",
+            "unassisted-diastole",
+            "augmentation"
+          ],
+          "explanation": "The dicrotic notch marks aortic valve closure — the start of diastole. Inflation timed here gives maximal coronary filling without opposing ejection."
+        },
+        {
+          "question": "What does the highlighted dip represent?",
+          "image": "visuals/iabp-waveform.svg",
+          "highlight": "assisted-eod",
+          "choices": [
+            "Assisted end-diastolic pressure — lowered by balloon deflation",
+            "Systolic pressure",
+            "A dropped beat",
+            "The augmentation peak"
+          ],
+          "answerIndex": 0,
+          "explanation": "The balloon deflating just before systole pulls aortic pressure below the patient's own end-diastolic pressure. That lower number is the afterload reduction the pump provides."
+        },
+        {
+          "question": "Which of these are complications specific to a balloon pump? Pick every correct answer.",
+          "loaded": true,
+          "choices": [
+            "Reduced flow to the kidneys if positioned too low",
+            "Hyperkalaemia from the helium",
+            "Limb ischaemia on the insertion side",
+            "Balloon rupture (blood in the gas line)"
+          ],
+          "answerIndex": [
+            0,
+            2,
+            3
+          ],
+          "explanation": "The catheter can occlude the femoral artery, the balloon can leak (blood in the tubing is an emergency), and a low balloon can block the renal arteries. Helium does not affect potassium."
+        }
+      ]
+    },
+    {
+      "id": "cvicu-valves",
+      "title": "Valve surgery concepts",
+      "prerequisites": [
+        "cvicu-postop-hemo"
+      ],
+      "questions": [
+        {
+          "question": "A stenotic valve is one that:",
+          "choices": [
+            "Does not close fully, so blood leaks backward",
+            "Beats too fast",
+            "Does not open fully, so blood struggles to get through",
+            "Has been replaced"
+          ],
+          "answerIndex": 2,
+          "explanation": "Stenosis = narrow. The chamber behind a stenotic valve works against the obstruction and thickens (e.g., a hypertrophied left ventricle in aortic stenosis)."
+        },
+        {
+          "question": "A regurgitant (insufficient) valve is one that:",
+          "choices": [
+            "Is too narrow",
+            "Leaks, letting blood flow backward",
+            "Is infected",
+            "Has calcified"
+          ],
+          "answerIndex": 1,
+          "explanation": "Regurgitation volume-loads the chamber behind the valve, which dilates over time. After repair, that chamber suddenly has to handle only forward flow — a big change for the heart."
+        },
+        {
+          "question": "After aortic valve replacement for severe stenosis, why can the thick left ventricle be a problem early on?",
+          "choices": [
+            "It is stiff and needs good preload and a slow-enough rate to fill",
+            "It is too weak to contract",
+            "It beats too slowly",
+            "It needs high afterload"
+          ],
+          "answerIndex": 0,
+          "explanation": "A hypertrophied ventricle fills poorly. Keep it full, keep the rhythm sinus (atrial kick matters), and avoid tachycardia that shortens diastole."
+        },
+        {
+          "question": "A mechanical valve, compared with a tissue valve, means the patient will need:",
+          "choices": [
+            "A second surgery within a year",
+            "No follow-up",
+            "Antibiotics for life",
+            "Lifelong anticoagulation"
+          ],
+          "answerIndex": 3,
+          "explanation": "Mechanical valves are durable but thrombogenic, so warfarin is required for life. Tissue valves usually need only short-term anticoagulation but wear out sooner."
+        }
+      ]
+    },
+    {
+      "id": "cvicu-pulmonary",
+      "title": "Lungs after surgery: ventilation and extubation",
+      "prerequisites": [
+        "cvicu-cpb"
+      ],
+      "questions": [
+        {
+          "question": "Early extubation after cardiac surgery is encouraged mainly because:",
+          "choices": [
+            "Patients prefer it",
+            "The ventilator is needed elsewhere",
+            "Positive-pressure ventilation lowers venous return and raises the risk of pneumonia",
+            "It stops bleeding"
+          ],
+          "answerIndex": 2,
+          "explanation": "Positive pressure in the chest squeezes the vena cavae and reduces preload; sedation and the tube add infection and delirium risk. Most protocols aim to extubate within hours when stable."
+        },
+        {
+          "question": "Before extubation after surgery, which must be true?",
+          "choices": [
+            "Chest tubes removed",
+            "Awake, haemodynamically stable, not bleeding heavily, warm, and breathing adequately",
+            "Pacing wires removed",
+            "Potassium above 5"
+          ],
+          "answerIndex": 1,
+          "explanation": "Readiness criteria exist so you don't lose the airway during a bleed or a rhythm problem. Hypothermia and shivering also raise oxygen demand, so warm first."
+        },
+        {
+          "question": "Atelectasis is common after sternotomy because:",
+          "choices": [
+            "Pain and splinting lead to shallow breathing and collapsed alveoli",
+            "Bypass fills the lungs with fluid",
+            "Oxygen is toxic",
+            "The lungs are removed during surgery"
+          ],
+          "answerIndex": 0,
+          "explanation": "Guarding the incision means small breaths; the lungs were also deflated on bypass. Pain control, incentive spirometry and early mobility reverse it."
+        },
+        {
+          "question": "A pleural effusion after cardiac surgery is most often:",
+          "choices": [
+            "A sign of pneumonia",
+            "A sign of heart failure only",
+            "Always drained surgically",
+            "Fluid collecting around the lung from inflammation and bleeding — common and usually benign"
+          ],
+          "answerIndex": 3,
+          "explanation": "Small effusions, especially on the left, are expected. Large or symptomatic ones that impair breathing get drained."
+        }
+      ]
+    },
+    {
+      "id": "cvicu-renal-glucose",
+      "title": "Kidneys and glucose after surgery",
+      "prerequisites": [
+        "cvicu-cpb"
+      ],
+      "questions": [
+        {
+          "question": "Acute kidney injury after cardiac surgery is mostly driven by:",
+          "choices": [
+            "Contrast dye only",
+            "The anaesthetic gas",
+            "Low perfusion pressure and inflammation during and after bypass",
+            "High potassium"
+          ],
+          "answerIndex": 2,
+          "explanation": "Non-pulsatile, lower-pressure flow on bypass, haemolysis and inflammation injure the tubules. Keeping MAP and cardiac output up protects the kidneys."
+        },
+        {
+          "question": "Urine output is watched hourly after surgery because it is:",
+          "choices": [
+            "A measure of fluid intake",
+            "A bedside indicator of kidney perfusion and cardiac output",
+            "Required for discharge",
+            "A sign of bleeding"
+          ],
+          "answerIndex": 1,
+          "explanation": "If the kidneys are making urine, they are being perfused. Falling output is often the first sign that output or volume has dropped."
+        },
+        {
+          "question": "Why is blood glucose tightly managed after cardiac surgery?",
+          "choices": [
+            "High glucose impairs wound healing and raises infection risk, especially in the sternum",
+            "Low glucose causes AF",
+            "Insulin lowers potassium",
+            "Glucose causes bleeding"
+          ],
+          "answerIndex": 0,
+          "explanation": "Surgical stress raises glucose even in non-diabetics. Hyperglycaemia is linked to deep sternal wound infection and worse outcomes, so an insulin infusion is common early on."
+        },
+        {
+          "question": "Insulin infusions after surgery require close potassium monitoring because:",
+          "choices": [
+            "Insulin raises potassium",
+            "Potassium causes hyperglycaemia",
+            "Potassium is lost in urine only",
+            "Insulin drives potassium into cells and levels can fall"
+          ],
+          "answerIndex": 3,
+          "explanation": "Hypokalaemia after surgery is an arrhythmia risk; insulin makes it worse. Replace proactively and recheck."
+        }
+      ]
+    },
+    {
+      "id": "cvicu-neuro",
+      "title": "Brain after surgery: stroke and delirium",
+      "prerequisites": [
+        "cvicu-cpb"
+      ],
+      "questions": [
+        {
+          "question": "Stroke after cardiac surgery is most often caused by:",
+          "choices": [
+            "High blood pressure",
+            "Low glucose",
+            "Emboli — from the aorta, air in the circuit or atrial fibrillation",
+            "The anaesthetic"
+          ],
+          "answerIndex": 2,
+          "explanation": "Clamping and cannulating a diseased aorta can shower debris; AF forms clots. A new focal deficit after surgery is an emergency — call for imaging early."
+        },
+        {
+          "question": "The first neuro check after surgery is important because:",
+          "choices": [
+            "It is required by the ventilator",
+            "It sets the baseline that later changes are compared against",
+            "It predicts bleeding",
+            "It replaces imaging"
+          ],
+          "answerIndex": 1,
+          "explanation": "A patient who wakes with a weak side needs a different response than one who develops it on day two. Without a baseline, you cannot tell new from old."
+        },
+        {
+          "question": "Post-op delirium is best described as:",
+          "choices": [
+            "An acute, fluctuating change in attention and awareness",
+            "Permanent dementia from bypass",
+            "Normal post-anaesthesia drowsiness",
+            "A psychiatric illness"
+          ],
+          "answerIndex": 0,
+          "explanation": "Delirium comes and goes, often worse at night, and can be hyperactive or quiet. It is common after cardiac surgery and linked to worse outcomes, so it is screened for and prevented."
+        },
+        {
+          "question": "Which measures reduce delirium risk after surgery? Pick every correct answer.",
+          "loaded": true,
+          "choices": [
+            "Glasses and hearing aids back on early",
+            "Keeping the patient deeply sedated for 48 hours",
+            "Early mobilisation and a normal day–night routine",
+            "Minimising benzodiazepines"
+          ],
+          "answerIndex": [
+            0,
+            2,
+            3
+          ],
+          "explanation": "Orientation, sleep, movement and avoiding deliriogenic drugs all help. Deep, prolonged sedation is a cause of delirium, not a treatment."
+        }
+      ]
+    },
+    {
+      "id": "cvicu-recovery",
+      "title": "Sternal precautions and early recovery",
+      "prerequisites": [
+        "cvicu-chest-tubes"
+      ],
+      "questions": [
+        {
+          "question": "Sternal precautions exist because:",
+          "choices": [
+            "The skin incision is fragile",
+            "The heart can be damaged by movement",
+            "The sternum is wired, not healed, and twisting or pushing can separate it",
+            "Patients must not walk"
+          ],
+          "answerIndex": 2,
+          "explanation": "Bone takes weeks to knit. Pushing up from a chair, lifting and reaching behind stress the wires. A 'cough pillow' braces the chest during coughing."
+        },
+        {
+          "question": "Sternal instability ('clicking' with movement) matters because it:",
+          "choices": [
+            "Is a normal healing sound",
+            "Signals the bone is not stable and raises the risk of deep sternal wound infection",
+            "Means the wires have dissolved",
+            "Only affects comfort"
+          ],
+          "answerIndex": 1,
+          "explanation": "An unstable sternum leaves a path for infection into the mediastinum — a serious complication. Report it so the surgeon can assess."
+        },
+        {
+          "question": "Early mobilisation after cardiac surgery helps most with:",
+          "choices": [
+            "Lung expansion, circulation, delirium prevention and bowel function",
+            "Sternal healing",
+            "Blood sugar",
+            "Pacing wire removal"
+          ],
+          "answerIndex": 0,
+          "explanation": "Sitting, standing and walking within the first day re-expands the lungs, prevents clots and keeps the brain oriented. It is a treatment, not a reward."
+        },
+        {
+          "question": "Beta-blockers are typically restarted early after CABG to:",
+          "choices": [
+            "Raise blood pressure",
+            "Prevent infection",
+            "Treat pain",
+            "Reduce post-op atrial fibrillation and protect the heart"
+          ],
+          "answerIndex": 3,
+          "explanation": "Lower catecholamine drive means fewer arrhythmias and less oxygen demand on the recovering heart. They are usually resumed as soon as pressure and rate allow."
+        }
+      ]
+    }
+  ]
+}

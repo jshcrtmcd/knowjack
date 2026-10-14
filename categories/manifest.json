@@ -4,6 +4,11 @@
       "name": "CCRN Prep — Concepts First",
       "file": "ccrn-concepts.json",
       "description": "Critical-care nursing concepts built from physiology up to applied scenarios. Not exam-style questions — a foundation to study from."
+    },
+    {
+      "name": "Cardiac Surgery Concepts for CVICU Nurses",
+      "file": "cvicu-cardiac-surgery.json",
+      "description": "Bypass, post-op hemodynamics, bleeding and tamponade, chest tubes, pacing wires, pressors, IABP, valves — concept-first."
     }
   ]
 }
