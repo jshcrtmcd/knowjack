@@ -1,0 +1,1222 @@
+{
+  "category": "CCRN Prep — Concepts First",
+  "description": "Critical-care nursing concepts taught from the ground up: physiology first, then monitoring and recognition, then applied scenarios. Quick questions, clear explanations. Verify clinical specifics against the AACN CCRN content outline and current references before relying on them.",
+  "concepts": [
+    {
+      "id": "cv-cardiac-physiology",
+      "title": "Cardiovascular: Normal cardiac physiology",
+      "prerequisites": [],
+      "questions": [
+        {
+          "question": "Cardiac output equals heart rate multiplied by what?",
+          "choices": [
+            "Blood pressure",
+            "Ejection fraction",
+            "Systemic vascular resistance",
+            "Stroke volume"
+          ],
+          "answerIndex": 3,
+          "explanation": "CO = HR × SV. Stroke volume is the blood ejected per beat, so beats per minute × volume per beat gives volume per minute."
+        },
+        {
+          "question": "Preload is best described as:",
+          "choices": [
+            "The resistance the ventricle pumps against",
+            "The force of ventricular contraction",
+            "The stretch on the ventricle at the end of filling",
+            "The heart rate at rest"
+          ],
+          "answerIndex": 2,
+          "explanation": "Preload is end-diastolic volume — how full and stretched the ventricle is before it contracts. More preload generally means more stretch and (up to a point) a stronger beat."
+        },
+        {
+          "question": "Afterload is best described as:",
+          "choices": [
+            "The volume in the ventricle before contraction",
+            "The resistance the ventricle must overcome to eject blood",
+            "The speed of electrical conduction",
+            "The amount of blood returning to the heart"
+          ],
+          "answerIndex": 1,
+          "explanation": "Afterload is the pressure/resistance the ventricle pushes against to open the valve and eject. High afterload (e.g., vasoconstriction, aortic stenosis) makes the heart work harder."
+        },
+        {
+          "question": "Contractility refers to:",
+          "choices": [
+            "The intrinsic strength of the heart muscle's squeeze",
+            "The amount of venous return",
+            "The stiffness of the arteries",
+            "The heart's electrical rate"
+          ],
+          "answerIndex": 0,
+          "explanation": "Contractility is how forcefully the myocardium contracts independent of preload or afterload. Drugs like dobutamine raise it; ischemia and acidosis lower it."
+        },
+        {
+          "question": "The Frank–Starling principle says that, up to a limit, more stretch on the ventricle leads to:",
+          "choices": [
+            "A weaker contraction",
+            "A slower heart rate",
+            "Lower afterload",
+            "A stronger contraction"
+          ],
+          "answerIndex": 3,
+          "explanation": "Within physiologic limits, more end-diastolic stretch produces a more forceful ejection — which is why giving fluid (raising preload) can raise stroke volume."
+        }
+      ]
+    },
+    {
+      "id": "cv-conduction",
+      "title": "Cardiovascular: Conduction system",
+      "prerequisites": [
+        "cv-cardiac-physiology"
+      ],
+      "questions": [
+        {
+          "question": "Which structure is the heart's normal pacemaker?",
+          "choices": [
+            "AV node",
+            "Bundle of His",
+            "SA node",
+            "Purkinje fibers"
+          ],
+          "answerIndex": 2,
+          "explanation": "The sinoatrial node fires fastest, so it sets the rhythm. The AV node and ventricles have slower backup rates that only take over if the SA node fails."
+        },
+        {
+          "question": "The P wave on an ECG represents:",
+          "choices": [
+            "Ventricular depolarization",
+            "Atrial depolarization",
+            "Ventricular repolarization",
+            "Atrial repolarization"
+          ],
+          "answerIndex": 1,
+          "explanation": "The P wave is the atria depolarizing (electrically activating) before they contract. Ventricular depolarization is the QRS; ventricular repolarization is the T wave."
+        },
+        {
+          "question": "The PR interval measures the time from:",
+          "choices": [
+            "Start of atrial activation to start of ventricular activation",
+            "Start to end of ventricular activation",
+            "Ventricular activation to recovery",
+            "One beat to the next"
+          ],
+          "answerIndex": 0,
+          "explanation": "PR runs from the start of the P wave to the start of the QRS — mostly the delay at the AV node. A long PR means conduction through the AV node is slow (first-degree block)."
+        },
+        {
+          "question": "Why does the AV node deliberately slow the impulse?",
+          "choices": [
+            "To speed up the heart rate",
+            "To prevent the T wave",
+            "To increase afterload",
+            "To let the atria finish filling the ventricles"
+          ],
+          "answerIndex": 3,
+          "explanation": "The AV delay gives the atria time to contract and top off the ventricles (the 'atrial kick') before the ventricles fire. Losing that kick, as in atrial fibrillation, can drop cardiac output."
+        }
+      ]
+    },
+    {
+      "id": "cv-hemodynamics",
+      "title": "Cardiovascular: Hemodynamic monitoring basics",
+      "prerequisites": [
+        "cv-cardiac-physiology"
+      ],
+      "questions": [
+        {
+          "question": "Mean arterial pressure (MAP) is a measure of:",
+          "choices": [
+            "Peak pressure during systole",
+            "Pressure in the right atrium",
+            "Average pressure driving blood into the organs",
+            "Pressure in the pulmonary artery"
+          ],
+          "answerIndex": 2,
+          "explanation": "MAP is the average arterial pressure over a cardiac cycle and the best single number for organ perfusion. A common goal in shock is a MAP of about 65 mmHg or more."
+        },
+        {
+          "question": "Central venous pressure (CVP) is used as a rough estimate of:",
+          "choices": [
+            "Left-sided afterload",
+            "Right-sided preload",
+            "Contractility",
+            "Cardiac output"
+          ],
+          "answerIndex": 1,
+          "explanation": "CVP reflects pressure in the right atrium, which approximates right ventricular filling (preload). It's an imperfect estimate, which is why trends matter more than one value."
+        },
+        {
+          "question": "Pulmonary artery occlusion (wedge) pressure estimates:",
+          "choices": [
+            "Left-sided preload",
+            "Right-sided preload",
+            "Systemic vascular resistance",
+            "Oxygen delivery"
+          ],
+          "answerIndex": 0,
+          "explanation": "When the PA catheter balloon is inflated, it reads 'through' the pulmonary circulation to the left atrium, approximating left ventricular filling pressure."
+        },
+        {
+          "question": "Systemic vascular resistance (SVR) is the hemodynamic number for:",
+          "choices": [
+            "Preload",
+            "Contractility",
+            "Heart rate",
+            "Afterload"
+          ],
+          "answerIndex": 3,
+          "explanation": "SVR is the resistance in the systemic arteries that the left ventricle pumps against — the measured version of afterload. Vasodilation lowers it; vasoconstriction raises it."
+        },
+        {
+          "question": "A low mixed venous oxygen saturation (SvO2) usually means:",
+          "choices": [
+            "The patient is over-oxygenated",
+            "Cardiac output is too high",
+            "Tissues are extracting more oxygen than normal — delivery is not keeping up with demand",
+            "Hemoglobin is too high"
+          ],
+          "answerIndex": 2,
+          "explanation": "SvO2 is the oxygen left in blood after it passes the tissues. When delivery falls (low output, low Hgb, low SaO2) or demand rises, tissues pull more oxygen out and SvO2 drops."
+        }
+      ]
+    },
+    {
+      "id": "cv-arrhythmia-mechanisms",
+      "title": "Cardiovascular: Arrhythmia mechanisms",
+      "prerequisites": [
+        "cv-conduction"
+      ],
+      "questions": [
+        {
+          "question": "'Reentry' as a cause of arrhythmia means:",
+          "choices": [
+            "The SA node fires too fast",
+            "An impulse circles back and re-stimulates tissue that has already recovered",
+            "The AV node stops conducting",
+            "Potassium leaks out of cells"
+          ],
+          "answerIndex": 1,
+          "explanation": "Reentry is an electrical loop: a wave of activation travels around a circuit and keeps re-exciting tissue. It underlies many tachycardias, including atrial flutter and many ventricular tachycardias."
+        },
+        {
+          "question": "'Enhanced automaticity' means:",
+          "choices": [
+            "Cells outside the SA node start firing on their own",
+            "The SA node stops firing",
+            "Conduction is blocked at the AV node",
+            "The ventricles stop contracting"
+          ],
+          "answerIndex": 0,
+          "explanation": "Automaticity is the ability to self-fire. When ischemia, catecholamines, or electrolyte shifts make other cells fire faster than the SA node, they take over — producing ectopic beats or rhythms."
+        },
+        {
+          "question": "A 'heart block' is fundamentally a problem of:",
+          "choices": [
+            "Impulse formation",
+            "Muscle contractility",
+            "Valve function",
+            "Impulse conduction"
+          ],
+          "answerIndex": 3,
+          "explanation": "In heart block the impulse forms normally but is delayed or stopped on its way through the AV node or bundle branches. The degree of block describes how much gets through."
+        },
+        {
+          "question": "Which electrolyte disturbance most classically makes the heart irritable and prone to arrhythmias?",
+          "choices": [
+            "High sodium",
+            "Low chloride",
+            "Low potassium",
+            "High bicarbonate"
+          ],
+          "answerIndex": 2,
+          "explanation": "Hypokalemia makes cardiac cells more excitable and is a common, reversible cause of ectopy and ventricular arrhythmias. Low magnesium does the same and often travels with it."
+        }
+      ]
+    },
+    {
+      "id": "cv-arrhythmia-recognition",
+      "title": "Cardiovascular: Arrhythmia recognition",
+      "prerequisites": [
+        "cv-arrhythmia-mechanisms"
+      ],
+      "questions": [
+        {
+          "question": "An irregularly irregular rhythm with no clear P waves is most likely:",
+          "choices": [
+            "Sinus tachycardia",
+            "Atrial fibrillation",
+            "Ventricular tachycardia",
+            "Third-degree heart block"
+          ],
+          "answerIndex": 1,
+          "explanation": "In atrial fibrillation the atria quiver instead of contracting, so there are no organized P waves and the ventricles respond unpredictably — hence 'irregularly irregular.'"
+        },
+        {
+          "question": "A wide-QRS tachycardia at 180/min with no P waves is most likely:",
+          "choices": [
+            "Ventricular tachycardia",
+            "Sinus tachycardia",
+            "Atrial fibrillation with slow response",
+            "First-degree block"
+          ],
+          "answerIndex": 0,
+          "explanation": "A wide QRS means the ventricles are activating abnormally (not through the normal conduction system). Fast, wide, and regular should be treated as VT until proven otherwise."
+        },
+        {
+          "question": "P waves and QRS complexes marching along at their own independent rates describes:",
+          "choices": [
+            "First-degree heart block",
+            "Atrial flutter",
+            "Sinus bradycardia",
+            "Third-degree (complete) heart block"
+          ],
+          "answerIndex": 3,
+          "explanation": "In complete block nothing gets through the AV node, so the atria and ventricles each run on their own pacemaker. The ventricular escape rate is slow and this rhythm is unstable."
+        },
+        {
+          "question": "A chaotic, wavy baseline with no recognizable QRS complexes in a pulseless patient is:",
+          "choices": [
+            "Atrial fibrillation",
+            "Asystole",
+            "Ventricular fibrillation",
+            "Sinus rhythm with artifact"
+          ],
+          "answerIndex": 2,
+          "explanation": "Ventricular fibrillation is disorganized electrical activity with no effective contraction. It produces no pulse and needs immediate defibrillation and CPR."
+        },
+        {
+          "question": "A consistently prolonged PR interval with every P wave followed by a QRS is:",
+          "choices": [
+            "Second-degree AV block",
+            "First-degree AV block",
+            "Third-degree AV block",
+            "Atrial fibrillation"
+          ],
+          "answerIndex": 1,
+          "explanation": "First-degree block means every impulse gets through, just slowly. It is usually benign on its own but can be a warning sign with certain drugs or ischemia."
+        }
+      ]
+    },
+    {
+      "id": "cv-shock-concepts",
+      "title": "Cardiovascular: Shock as a perfusion problem",
+      "prerequisites": [
+        "cv-hemodynamics"
+      ],
+      "questions": [
+        {
+          "question": "At its core, shock is:",
+          "choices": [
+            "Inadequate tissue perfusion and oxygen delivery",
+            "A blood pressure below 90 systolic",
+            "A fast heart rate",
+            "Loss of consciousness"
+          ],
+          "answerIndex": 0,
+          "explanation": "Shock is defined by cells not getting enough oxygen, not by a single vital sign. Blood pressure can be normal early while perfusion is already failing (lactate and mental status often tell you first)."
+        },
+        {
+          "question": "Hypovolemic shock is primarily a problem of:",
+          "choices": [
+            "High afterload",
+            "Low contractility",
+            "Low SVR",
+            "Low preload"
+          ],
+          "answerIndex": 3,
+          "explanation": "Lose volume (bleeding, dehydration) and there is less blood returning to fill the heart. Less preload → less stroke volume → less output. The fix is restoring volume."
+        },
+        {
+          "question": "Cardiogenic shock is primarily a problem of:",
+          "choices": [
+            "Too little blood volume",
+            "Vessels that are too dilated",
+            "The pump — poor contractility",
+            "A blocked airway"
+          ],
+          "answerIndex": 2,
+          "explanation": "The heart muscle itself can't eject enough (large MI, severe heart failure). Preload is often high, output is low, and the patient is cold and wet."
+        },
+        {
+          "question": "Distributive shock (e.g., septic, anaphylactic) is primarily a problem of:",
+          "choices": [
+            "Low blood volume",
+            "Widespread vasodilation — low SVR",
+            "A weak pump",
+            "A blocked outflow"
+          ],
+          "answerIndex": 1,
+          "explanation": "The vessels dilate and leak, so the 'container' is too big for the volume in it. SVR falls, and after fluids, vasopressors are used to restore vascular tone."
+        },
+        {
+          "question": "Obstructive shock means blood flow is physically blocked, as in:",
+          "choices": [
+            "Cardiac tamponade or massive pulmonary embolism",
+            "Severe dehydration",
+            "Anaphylaxis",
+            "Myocardial infarction"
+          ],
+          "answerIndex": 0,
+          "explanation": "In tamponade, tension pneumothorax, or a large PE, the heart can't fill or eject because something is mechanically in the way. Relieving the obstruction is the treatment."
+        }
+      ]
+    },
+    {
+      "id": "cv-acs",
+      "title": "Cardiovascular: Acute coronary syndrome",
+      "prerequisites": [
+        "cv-cardiac-physiology",
+        "cv-conduction"
+      ],
+      "questions": [
+        {
+          "question": "Myocardial ischemia happens when:",
+          "choices": [
+            "The heart beats too slowly",
+            "Potassium is low",
+            "The pericardium is inflamed",
+            "Oxygen supply to heart muscle can't meet its demand"
+          ],
+          "answerIndex": 3,
+          "explanation": "Ischemia is a supply/demand mismatch — usually a narrowed or blocked coronary artery. Anything that raises demand (tachycardia, hypertension) or lowers supply (hypotension, anemia) makes it worse."
+        },
+        {
+          "question": "ST-segment elevation on the ECG most often signals:",
+          "choices": [
+            "A healed old infarction",
+            "Normal early repolarization only",
+            "Full-thickness injury from a completely blocked artery",
+            "Low potassium"
+          ],
+          "answerIndex": 2,
+          "explanation": "ST elevation in a pattern of leads (a 'territory') indicates acute transmural injury — a STEMI — and the artery usually needs to be opened urgently."
+        },
+        {
+          "question": "Troponin is useful because it:",
+          "choices": [
+            "Measures oxygen saturation",
+            "Rises when heart muscle cells are damaged",
+            "Shows which artery is blocked",
+            "Indicates fluid overload"
+          ],
+          "answerIndex": 1,
+          "explanation": "Troponin is a protein inside cardiac muscle cells. When cells die it leaks into the blood, so a rising troponin confirms myocardial injury."
+        },
+        {
+          "question": "The main goal of early treatment in an acute MI is to:",
+          "choices": [
+            "Restore blood flow to the heart muscle quickly",
+            "Lower the heart rate below 50",
+            "Raise blood pressure as high as possible",
+            "Give fluids rapidly"
+          ],
+          "answerIndex": 0,
+          "explanation": "'Time is muscle.' The faster the artery is reopened (PCI or fibrinolytics), the less heart muscle dies — which is why door-to-balloon time is tracked."
+        }
+      ]
+    },
+    {
+      "id": "pulm-gas-exchange",
+      "title": "Pulmonary: Ventilation vs. oxygenation",
+      "prerequisites": [],
+      "questions": [
+        {
+          "question": "'Ventilation' refers to moving air in and out, and its blood-gas marker is:",
+          "choices": [
+            "PaO2",
+            "pH",
+            "Bicarbonate",
+            "PaCO2"
+          ],
+          "answerIndex": 3,
+          "explanation": "Ventilation clears CO2. If the lungs aren't moving enough air, CO2 builds up — so PaCO2 tells you how well the patient is ventilating."
+        },
+        {
+          "question": "'Oxygenation' refers to getting oxygen into the blood, and its markers are:",
+          "choices": [
+            "PaCO2 and pH",
+            "Bicarbonate and sodium",
+            "PaO2 and SpO2",
+            "Respiratory rate only"
+          ],
+          "answerIndex": 2,
+          "explanation": "PaO2 and oxygen saturation reflect oxygen uptake across the alveoli. A patient can ventilate normally yet oxygenate poorly (e.g., pneumonia), or the reverse."
+        },
+        {
+          "question": "A patient breathing rapidly who still has rising CO2 is most likely:",
+          "choices": [
+            "Over-ventilating",
+            "Taking breaths too shallow to clear CO2",
+            "Oxygenating too well",
+            "Hyperventilating from anxiety only"
+          ],
+          "answerIndex": 1,
+          "explanation": "Rate alone doesn't equal ventilation; what matters is the volume reaching the alveoli each minute. Rapid shallow breathing moves mostly dead-space air, so CO2 climbs."
+        },
+        {
+          "question": "Ventilation/perfusion (V/Q) mismatch means:",
+          "choices": [
+            "Air and blood aren't reaching the same parts of the lung",
+            "The patient is breathing too fast",
+            "The heart rate is too high",
+            "The airway is blocked"
+          ],
+          "answerIndex": 0,
+          "explanation": "Gas exchange needs air and blood to meet at the alveolus. Pneumonia (air can't get in) or pulmonary embolism (blood can't get there) both lower oxygen by mismatching the two."
+        }
+      ]
+    },
+    {
+      "id": "pulm-abg",
+      "title": "Pulmonary: ABG interpretation basics",
+      "prerequisites": [
+        "pulm-gas-exchange"
+      ],
+      "questions": [
+        {
+          "question": "A pH below 7.35 is called:",
+          "choices": [
+            "Alkalosis",
+            "Normal",
+            "Hypoxemia",
+            "Acidosis"
+          ],
+          "answerIndex": 3,
+          "explanation": "Normal arterial pH is about 7.35–7.45. Lower is acidotic, higher is alkalotic. The next step is deciding whether the lungs (CO2) or the kidneys/metabolism (bicarbonate) caused it."
+        },
+        {
+          "question": "Low pH with a high PaCO2 is:",
+          "choices": [
+            "Respiratory alkalosis",
+            "Metabolic acidosis",
+            "Respiratory acidosis",
+            "Metabolic alkalosis"
+          ],
+          "answerIndex": 2,
+          "explanation": "CO2 is an acid. When ventilation fails and CO2 accumulates, pH drops — a respiratory acidosis. Causes include sedation, COPD exacerbation, and fatigue."
+        },
+        {
+          "question": "Low pH with a low bicarbonate is:",
+          "choices": [
+            "Respiratory acidosis",
+            "Metabolic acidosis",
+            "Metabolic alkalosis",
+            "Respiratory alkalosis"
+          ],
+          "answerIndex": 1,
+          "explanation": "Bicarbonate is the body's base buffer. When acid builds up (lactate, ketones, kidney failure), bicarbonate is used up and pH falls — a metabolic acidosis."
+        },
+        {
+          "question": "High pH with a low PaCO2 is:",
+          "choices": [
+            "Respiratory alkalosis",
+            "Metabolic alkalosis",
+            "Respiratory acidosis",
+            "Metabolic acidosis"
+          ],
+          "answerIndex": 0,
+          "explanation": "Blowing off CO2 removes acid, so pH rises. Hyperventilation from pain, anxiety, sepsis, or over-ventilation on a ventilator causes this."
+        },
+        {
+          "question": "'Compensation' on an ABG means:",
+          "choices": [
+            "The pH has become dangerously high",
+            "The oxygen level has normalized",
+            "The patient needs intubation",
+            "The other system is shifting to pull pH back toward normal"
+          ],
+          "answerIndex": 3,
+          "explanation": "If the lungs cause an acidosis, the kidneys slowly hold onto bicarbonate; if metabolism causes it, the lungs quickly blow off CO2. Compensation moves pH toward normal but rarely fully corrects it."
+        }
+      ]
+    },
+    {
+      "id": "pulm-vent-basics",
+      "title": "Pulmonary: Mechanical ventilation basics",
+      "prerequisites": [
+        "pulm-gas-exchange"
+      ],
+      "questions": [
+        {
+          "question": "On a ventilator, which two settings most directly change CO2 removal?",
+          "choices": [
+            "FiO2 and PEEP",
+            "Pressure support and flow",
+            "Respiratory rate and tidal volume",
+            "Humidity and temperature"
+          ],
+          "answerIndex": 2,
+          "explanation": "Rate × tidal volume = minute ventilation, which is what clears CO2. To lower PaCO2, raise the rate or the tidal volume."
+        },
+        {
+          "question": "Which two settings most directly improve oxygenation?",
+          "choices": [
+            "Rate and tidal volume",
+            "FiO2 and PEEP",
+            "Inspiratory time and trigger",
+            "Alarm limits"
+          ],
+          "answerIndex": 1,
+          "explanation": "FiO2 raises the oxygen concentration delivered; PEEP keeps alveoli open at end-expiration so more surface area is available for gas exchange."
+        },
+        {
+          "question": "PEEP helps oxygenation mainly by:",
+          "choices": [
+            "Preventing alveoli from collapsing at the end of exhalation",
+            "Increasing the respiratory rate",
+            "Removing CO2 faster",
+            "Lowering airway pressure"
+          ],
+          "answerIndex": 0,
+          "explanation": "Positive end-expiratory pressure acts like a splint, keeping small airways and alveoli open so they stay available for oxygen exchange. Too much PEEP can reduce venous return and blood pressure."
+        },
+        {
+          "question": "A sudden high-pressure alarm on a volume ventilator most likely means:",
+          "choices": [
+            "The circuit is disconnected",
+            "The patient is oxygenating well",
+            "The tidal volume is too low",
+            "Something is resisting the breath — secretions, biting, coughing, or a kinked tube"
+          ],
+          "answerIndex": 3,
+          "explanation": "In volume mode the ventilator pushes a set volume; if resistance rises, pressure rises. Assess the patient first (DOPE: Displacement, Obstruction, Pneumothorax, Equipment)."
+        },
+        {
+          "question": "A low-pressure or low-volume alarm most likely means:",
+          "choices": [
+            "A mucus plug",
+            "The patient is biting the tube",
+            "A leak or disconnection",
+            "Bronchospasm"
+          ],
+          "answerIndex": 2,
+          "explanation": "If pressure or returned volume drops, air is escaping somewhere — a disconnected circuit, a cuff leak, or a dislodged tube. Check the patient, then the circuit."
+        }
+      ]
+    },
+    {
+      "id": "pulm-ards",
+      "title": "Pulmonary: ARDS applied",
+      "prerequisites": [
+        "pulm-abg",
+        "pulm-vent-basics"
+      ],
+      "questions": [
+        {
+          "question": "In ARDS, the core lung problem is:",
+          "choices": [
+            "Bronchospasm narrowing the airways",
+            "Inflamed, leaky alveoli filling with fluid so oxygen can't cross",
+            "A blood clot in the pulmonary artery",
+            "Air trapped in the pleural space"
+          ],
+          "answerIndex": 1,
+          "explanation": "ARDS is diffuse inflammatory injury: the alveolar–capillary membrane leaks, alveoli flood and collapse, and the lungs get stiff. The hallmark is hypoxemia that doesn't respond well to extra oxygen."
+        },
+        {
+          "question": "Why are ARDS patients ventilated with low tidal volumes (about 6 mL/kg ideal body weight)?",
+          "choices": [
+            "To avoid over-stretching the few remaining healthy alveoli",
+            "To raise PaCO2 on purpose",
+            "To make weaning faster",
+            "Because the ventilator can't deliver more"
+          ],
+          "answerIndex": 0,
+          "explanation": "In ARDS only part of the lung is participating, so a normal tidal volume over-distends those alveoli and causes more injury. Small volumes are 'lung-protective.'"
+        },
+        {
+          "question": "Prone positioning in severe ARDS helps because it:",
+          "choices": [
+            "Lowers the heart rate",
+            "Reduces sedation needs",
+            "Removes secretions automatically",
+            "Improves matching of ventilation and blood flow in the lungs"
+          ],
+          "answerIndex": 3,
+          "explanation": "Lying face-down shifts the heart and fluid off the dependent lung and recruits collapsed posterior alveoli, improving V/Q matching and oxygenation."
+        },
+        {
+          "question": "'Permissive hypercapnia' in ARDS means:",
+          "choices": [
+            "Driving CO2 as low as possible",
+            "Stopping the ventilator for periods",
+            "Accepting a higher CO2 to keep ventilation gentle",
+            "Giving bicarbonate routinely"
+          ],
+          "answerIndex": 2,
+          "explanation": "Because low tidal volumes clear less CO2, clinicians accept a somewhat high PaCO2 (as long as pH is tolerable) rather than injure the lungs with bigger breaths."
+        }
+      ]
+    },
+    {
+      "id": "neuro-icp",
+      "title": "Neurological: Intracranial pressure and perfusion",
+      "prerequisites": [],
+      "questions": [
+        {
+          "question": "The skull holds three things — brain, blood, and CSF. If one increases, what must happen to keep pressure normal?",
+          "choices": [
+            "The skull expands",
+            "Another must decrease",
+            "Nothing — pressure never changes",
+            "The brain shrinks permanently"
+          ],
+          "answerIndex": 1,
+          "explanation": "This is the Monro–Kellie doctrine: the rigid skull has a fixed volume. Early on, CSF and venous blood shift out to compensate; once that reserve is used up, ICP climbs quickly."
+        },
+        {
+          "question": "Cerebral perfusion pressure (CPP) is calculated as:",
+          "choices": [
+            "MAP minus ICP",
+            "ICP minus MAP",
+            "Systolic BP minus ICP",
+            "MAP plus ICP"
+          ],
+          "answerIndex": 0,
+          "explanation": "CPP = MAP − ICP. Blood pushes into the brain (MAP) against the pressure already inside the skull (ICP). Rising ICP or falling MAP both starve the brain."
+        },
+        {
+          "question": "Which early sign suggests ICP is rising?",
+          "choices": [
+            "Fixed, dilated pupils on both sides",
+            "Very slow breathing",
+            "High blood pressure with slow pulse",
+            "Decreasing level of consciousness"
+          ],
+          "answerIndex": 3,
+          "explanation": "A change in alertness or confusion is usually the first clue. Cushing's triad (hypertension, bradycardia, irregular breathing) and blown pupils are late, ominous signs."
+        },
+        {
+          "question": "Elevating the head of the bed to about 30° helps lower ICP by:",
+          "choices": [
+            "Raising blood pressure",
+            "Increasing CSF production",
+            "Promoting venous drainage from the head",
+            "Lowering the heart rate"
+          ],
+          "answerIndex": 2,
+          "explanation": "Gravity helps venous blood leave the skull, reducing one of the three volumes inside. Keeping the neck midline (no kinked jugular veins) matters for the same reason."
+        }
+      ]
+    },
+    {
+      "id": "neuro-assessment",
+      "title": "Neurological: Neuro assessment",
+      "prerequisites": [
+        "neuro-icp"
+      ],
+      "questions": [
+        {
+          "question": "The Glasgow Coma Scale scores which three things?",
+          "choices": [
+            "Pupils, reflexes, strength",
+            "Eye opening, verbal response, motor response",
+            "Speech, memory, orientation",
+            "Heart rate, BP, respirations"
+          ],
+          "answerIndex": 1,
+          "explanation": "GCS = Eyes (1–4) + Verbal (1–5) + Motor (1–6), ranging from 3 to 15. A score of 8 or less is generally treated as coma and raises concern about airway protection."
+        },
+        {
+          "question": "A single pupil that becomes large and non-reactive most likely indicates:",
+          "choices": [
+            "Pressure on the third cranial nerve from swelling or herniation",
+            "Normal variation",
+            "Opioid effect",
+            "Brain death"
+          ],
+          "answerIndex": 0,
+          "explanation": "The oculomotor nerve carries the signal that constricts the pupil. Pressure on that side (expanding bleed, herniation) blocks it, so the pupil dilates and stops reacting — an emergency."
+        },
+        {
+          "question": "Pinpoint pupils in an unresponsive patient should make you think of:",
+          "choices": [
+            "Rising ICP",
+            "Stroke of the frontal lobe",
+            "Seizure",
+            "Opioid overdose"
+          ],
+          "answerIndex": 3,
+          "explanation": "Opioids constrict the pupils strongly. Pinpoint pupils with slow breathing is a classic opioid picture; naloxone is the reversal agent."
+        },
+        {
+          "question": "Why is a change from baseline more important than any single neuro finding?",
+          "choices": [
+            "Single findings are never useful",
+            "Baselines don't matter in neuro patients",
+            "Trends reveal deterioration early, before late signs appear",
+            "Only the GCS total matters"
+          ],
+          "answerIndex": 2,
+          "explanation": "A GCS of 13 means something different in a patient who was 15 an hour ago than in one who has been 13 for days. Serial exams catch the drop in time to act."
+        }
+      ]
+    },
+    {
+      "id": "neuro-stroke",
+      "title": "Neurological: Stroke concepts",
+      "prerequisites": [
+        "neuro-assessment"
+      ],
+      "questions": [
+        {
+          "question": "The two main types of stroke are:",
+          "choices": [
+            "Cardiac and respiratory",
+            "Ischemic (blocked artery) and hemorrhagic (bleeding)",
+            "Acute and chronic",
+            "Focal and global"
+          ],
+          "answerIndex": 1,
+          "explanation": "Most strokes are ischemic — a clot stops blood flow. Hemorrhagic strokes come from a ruptured vessel. The treatments are opposite, so imaging must tell them apart before anything is given."
+        },
+        {
+          "question": "Why is a CT scan done before giving a clot-dissolving drug?",
+          "choices": [
+            "To rule out bleeding — a thrombolytic would make a hemorrhage worse",
+            "To measure the size of the clot",
+            "To check for a brain tumor",
+            "To estimate the GCS"
+          ],
+          "answerIndex": 0,
+          "explanation": "Thrombolytics dissolve clots everywhere. If the stroke is actually a bleed, the drug would be catastrophic, so a non-contrast CT to exclude hemorrhage comes first."
+        },
+        {
+          "question": "Weakness on the right side of the body suggests the stroke is in which side of the brain?",
+          "choices": [
+            "Right",
+            "Both",
+            "Cerebellum",
+            "Left"
+          ],
+          "answerIndex": 3,
+          "explanation": "Motor pathways cross over in the brainstem, so each hemisphere controls the opposite side of the body. Language is also usually on the left, so right-sided weakness often comes with speech problems."
+        },
+        {
+          "question": "The 'last known well' time matters because:",
+          "choices": [
+            "It determines the stroke type",
+            "It predicts blood pressure",
+            "Time-limited treatments like thrombolytics depend on it",
+            "It is needed for the GCS"
+          ],
+          "answerIndex": 2,
+          "explanation": "Reperfusion therapies have time windows measured from when the patient was last normal — not when symptoms were noticed. An unclear time can rule a patient out of treatment."
+        }
+      ]
+    },
+    {
+      "id": "renal-function",
+      "title": "Renal: Kidney function basics",
+      "prerequisites": [
+        "cv-hemodynamics"
+      ],
+      "questions": [
+        {
+          "question": "The kidneys' filtering rate, GFR, depends heavily on:",
+          "choices": [
+            "The amount of urine in the bladder",
+            "Adequate blood pressure and flow into the kidney",
+            "Dietary protein alone",
+            "Lung function"
+          ],
+          "answerIndex": 1,
+          "explanation": "Filtration is pressure-driven. When perfusion pressure falls (shock, hypovolemia), GFR falls and urine output drops — which is why urine output is a bedside perfusion gauge."
+        },
+        {
+          "question": "A rising serum creatinine means:",
+          "choices": [
+            "The kidneys are clearing less than before",
+            "The patient is dehydrated only",
+            "The liver is failing",
+            "Potassium is low"
+          ],
+          "answerIndex": 0,
+          "explanation": "Creatinine is a muscle waste product cleared almost entirely by filtration. If it accumulates in the blood, filtration has dropped."
+        },
+        {
+          "question": "Urine output below about 0.5 mL/kg/hour for several hours is a warning sign of:",
+          "choices": [
+            "Fluid overload",
+            "Diabetes insipidus",
+            "Good hydration",
+            "Poor kidney perfusion or acute kidney injury"
+          ],
+          "answerIndex": 3,
+          "explanation": "Oliguria is one of the earliest signs that the kidneys are under-perfused or injured. Sustained low output is part of the definition of acute kidney injury."
+        },
+        {
+          "question": "Besides filtering waste, the kidneys also regulate:",
+          "choices": [
+            "Oxygen saturation",
+            "Heart rhythm directly",
+            "Fluid balance, electrolytes, and acid–base",
+            "Body temperature"
+          ],
+          "answerIndex": 2,
+          "explanation": "The kidneys adjust sodium, potassium, and water excretion and reclaim bicarbonate. When they fail, expect fluid overload, hyperkalemia, and metabolic acidosis."
+        }
+      ]
+    },
+    {
+      "id": "renal-aki-electrolytes",
+      "title": "Renal: Acute kidney injury and electrolytes",
+      "prerequisites": [
+        "renal-function"
+      ],
+      "questions": [
+        {
+          "question": "'Prerenal' acute kidney injury means the problem is:",
+          "choices": [
+            "Damage inside the kidney tissue",
+            "Not enough blood reaching the kidney",
+            "A blockage downstream in urine flow",
+            "An infection in the bladder"
+          ],
+          "answerIndex": 1,
+          "explanation": "Prerenal AKI is a perfusion problem — hypovolemia, low cardiac output, or vasodilation. The kidney itself is initially fine and recovers if flow is restored quickly."
+        },
+        {
+          "question": "'Intrarenal' (intrinsic) AKI means:",
+          "choices": [
+            "The kidney tissue itself is damaged, as in acute tubular necrosis",
+            "Blood flow is reduced",
+            "The ureters are blocked",
+            "The bladder can't empty"
+          ],
+          "answerIndex": 0,
+          "explanation": "Prolonged ischemia or toxins (contrast dye, aminoglycosides) injure the tubules directly. Fixing perfusion alone won't reverse it immediately."
+        },
+        {
+          "question": "'Postrenal' AKI means:",
+          "choices": [
+            "The kidney is under-perfused",
+            "The glomeruli are inflamed",
+            "The patient is on dialysis",
+            "Urine flow is obstructed after the kidney"
+          ],
+          "answerIndex": 3,
+          "explanation": "Stones, an enlarged prostate, or a blocked catheter back pressure up into the kidney. Relieving the obstruction is the treatment — always check the Foley first."
+        },
+        {
+          "question": "The most dangerous electrolyte consequence of kidney failure is:",
+          "choices": [
+            "Low sodium",
+            "High calcium",
+            "High potassium, which can cause lethal arrhythmias",
+            "Low chloride"
+          ],
+          "answerIndex": 2,
+          "explanation": "The kidneys excrete most potassium. When they fail, potassium rises; peaked T waves, widening QRS, and eventually cardiac arrest can follow. Calcium is given to protect the heart while potassium is lowered."
+        },
+        {
+          "question": "On the ECG, the earliest classic sign of hyperkalemia is:",
+          "choices": [
+            "ST elevation",
+            "Tall, peaked T waves",
+            "A prominent U wave",
+            "A short PR interval"
+          ],
+          "answerIndex": 1,
+          "explanation": "High potassium speeds repolarization, producing tall narrow T waves. As it worsens, P waves flatten and the QRS widens toward a sine wave."
+        }
+      ]
+    },
+    {
+      "id": "endo-glucose",
+      "title": "Endocrine: Glucose regulation, DKA and HHS",
+      "prerequisites": [
+        "pulm-abg"
+      ],
+      "questions": [
+        {
+          "question": "Insulin's basic job is to:",
+          "choices": [
+            "Move glucose from the blood into cells",
+            "Release glucose from the liver",
+            "Raise blood sugar during stress",
+            "Break down fat for fuel"
+          ],
+          "answerIndex": 0,
+          "explanation": "Insulin is the 'key' that lets cells take up glucose. Without it, sugar piles up in the blood while cells starve and switch to burning fat."
+        },
+        {
+          "question": "In DKA, where do the ketones (acids) come from?",
+          "choices": [
+            "Excess dietary protein",
+            "The kidneys",
+            "Lactate from the muscles",
+            "Fat breakdown because cells can't use glucose"
+          ],
+          "answerIndex": 3,
+          "explanation": "With no insulin, cells burn fat instead. Fat metabolism produces ketone acids, which cause the metabolic acidosis of diabetic ketoacidosis."
+        },
+        {
+          "question": "Why do DKA patients breathe deep and fast (Kussmaul respirations)?",
+          "choices": [
+            "Because their lungs are full of fluid",
+            "Because of high potassium",
+            "To blow off CO2 and compensate for metabolic acidosis",
+            "Because of fever"
+          ],
+          "answerIndex": 2,
+          "explanation": "The lungs compensate for acid in the blood by removing CO2. Deep rapid breathing is the body's attempt to raise pH."
+        },
+        {
+          "question": "HHS (hyperosmolar hyperglycemic state) differs from DKA mainly because:",
+          "choices": [
+            "Glucose is lower",
+            "There is enough insulin to prevent ketosis, so glucose climbs much higher without acidosis",
+            "It occurs only in type 1 diabetes",
+            "It causes rapid breathing"
+          ],
+          "answerIndex": 1,
+          "explanation": "In HHS, a little insulin still blocks fat breakdown, so no ketoacidosis — but glucose soars, pulling water out and causing profound dehydration and altered mental status."
+        },
+        {
+          "question": "As insulin is given in DKA, potassium must be watched closely because:",
+          "choices": [
+            "Insulin drives potassium into cells and serum levels can crash",
+            "Insulin raises potassium",
+            "Potassium causes ketones",
+            "Potassium is unaffected by insulin"
+          ],
+          "answerIndex": 0,
+          "explanation": "Insulin shifts potassium into cells along with glucose. A patient whose potassium looks normal in DKA is often whole-body depleted, so it falls fast once insulin starts."
+        }
+      ]
+    },
+    {
+      "id": "endo-water-sodium",
+      "title": "Endocrine: ADH, SIADH and diabetes insipidus",
+      "prerequisites": [
+        "renal-function"
+      ],
+      "questions": [
+        {
+          "question": "Antidiuretic hormone (ADH) tells the kidneys to:",
+          "choices": [
+            "Excrete water",
+            "Hold onto potassium",
+            "Excrete sodium",
+            "Hold onto water"
+          ],
+          "answerIndex": 3,
+          "explanation": "ADH (vasopressin) makes the collecting ducts reabsorb water, so urine becomes concentrated and the body keeps more fluid."
+        },
+        {
+          "question": "In SIADH there is too much ADH, so the patient:",
+          "choices": [
+            "Loses water and sodium rises",
+            "Produces large amounts of dilute urine",
+            "Retains water and the sodium level drops (dilution)",
+            "Becomes hyperkalemic"
+          ],
+          "answerIndex": 2,
+          "explanation": "Excess ADH means water is retained, diluting the blood — low serum sodium with concentrated urine. Treatment often starts with fluid restriction."
+        },
+        {
+          "question": "In diabetes insipidus there is too little ADH (or the kidney ignores it), so the patient:",
+          "choices": [
+            "Retains water and sodium falls",
+            "Produces large volumes of dilute urine and sodium rises",
+            "Has high blood sugar",
+            "Has concentrated urine"
+          ],
+          "answerIndex": 1,
+          "explanation": "Without ADH, the kidneys can't hold water; urine pours out dilute, and the remaining blood becomes concentrated — high sodium. It's common after pituitary surgery or severe head injury."
+        },
+        {
+          "question": "Why is rapid correction of chronic low sodium dangerous?",
+          "choices": [
+            "It can injure the brainstem (osmotic demyelination)",
+            "It causes kidney stones",
+            "It raises potassium",
+            "It causes DKA"
+          ],
+          "answerIndex": 0,
+          "explanation": "Brain cells adapt to a low-sodium environment. Pulling water out of them too quickly damages the myelin, causing permanent neurologic injury. Sodium is raised slowly and deliberately."
+        }
+      ]
+    },
+    {
+      "id": "heme-coagulation",
+      "title": "Hematologic: Clotting basics, DIC and HIT",
+      "prerequisites": [],
+      "questions": [
+        {
+          "question": "The first responders to a blood vessel injury are:",
+          "choices": [
+            "Red blood cells",
+            "White blood cells",
+            "Clotting proteins alone",
+            "Platelets, which stick to the injury and form a plug"
+          ],
+          "answerIndex": 3,
+          "explanation": "Platelets adhere and clump at the site within seconds. The clotting cascade then lays down fibrin to reinforce that plug into a stable clot."
+        },
+        {
+          "question": "PT/INR and aPTT measure:",
+          "choices": [
+            "The platelet count",
+            "Hemoglobin level",
+            "How long the clotting cascade takes to form fibrin",
+            "Oxygen-carrying capacity"
+          ],
+          "answerIndex": 2,
+          "explanation": "These are timing tests of the coagulation proteins. Warfarin prolongs PT/INR; heparin prolongs aPTT. Neither tells you anything about platelet number."
+        },
+        {
+          "question": "In DIC (disseminated intravascular coagulation), why do patients bleed AND clot?",
+          "choices": [
+            "The platelets are too large",
+            "Widespread clotting uses up platelets and clotting factors, leaving none to stop bleeding",
+            "The liver stops making blood",
+            "The bone marrow shuts down"
+          ],
+          "answerIndex": 1,
+          "explanation": "A trigger (sepsis, trauma, obstetric emergencies) activates clotting everywhere. Tiny clots block vessels while factors and platelets are consumed, so the patient oozes from every site."
+        },
+        {
+          "question": "Heparin-induced thrombocytopenia (HIT) is dangerous mainly because of:",
+          "choices": [
+            "New clots forming despite a falling platelet count",
+            "Severe bleeding only",
+            "Kidney failure",
+            "Allergic rash"
+          ],
+          "answerIndex": 0,
+          "explanation": "HIT is an immune reaction that activates platelets. The count drops because platelets are being consumed in clots — so the treatment is to stop heparin and start a different anticoagulant, not to transfuse platelets."
+        }
+      ]
+    },
+    {
+      "id": "multi-sepsis",
+      "title": "Multisystem: Sepsis and septic shock",
+      "prerequisites": [
+        "cv-shock-concepts",
+        "renal-function"
+      ],
+      "questions": [
+        {
+          "question": "Sepsis is best understood as:",
+          "choices": [
+            "Any infection with a fever",
+            "A positive blood culture",
+            "Low blood pressure from bleeding",
+            "A dysregulated body response to infection that damages the body's own organs"
+          ],
+          "answerIndex": 3,
+          "explanation": "The infection starts it, but the harm comes from the body's exaggerated inflammatory response — leaky vessels, vasodilation, microclots, and failing organs."
+        },
+        {
+          "question": "Septic shock is sepsis plus:",
+          "choices": [
+            "Fever above 39 °C",
+            "A white count above 12,000",
+            "Low blood pressure needing vasopressors and elevated lactate despite fluids",
+            "Positive cultures"
+          ],
+          "answerIndex": 2,
+          "explanation": "Shock means perfusion is failing. In septic shock, fluids alone can't keep MAP up and lactate stays elevated — markers that cells are not getting enough oxygen."
+        },
+        {
+          "question": "Why is lactate measured in suspected sepsis?",
+          "choices": [
+            "It identifies the bacteria",
+            "It rises when tissues aren't getting enough oxygen",
+            "It measures kidney function",
+            "It shows fluid overload"
+          ],
+          "answerIndex": 1,
+          "explanation": "Under-perfused cells switch to anaerobic metabolism and make lactate. A high or rising lactate flags hidden shock even when blood pressure looks okay; a falling lactate suggests resuscitation is working."
+        },
+        {
+          "question": "The single most time-sensitive sepsis intervention is:",
+          "choices": [
+            "Antibiotics given promptly after cultures are drawn",
+            "A chest X-ray",
+            "A central line",
+            "Placing a Foley catheter"
+          ],
+          "answerIndex": 0,
+          "explanation": "Every hour of delay in effective antibiotics is associated with higher mortality. Cultures are drawn first when it doesn't delay treatment, then antibiotics go in fast."
+        },
+        {
+          "question": "After fluids, the first-line vasopressor for septic shock is:",
+          "choices": [
+            "Dopamine",
+            "Epinephrine",
+            "Phenylephrine",
+            "Norepinephrine"
+          ],
+          "answerIndex": 3,
+          "explanation": "Norepinephrine mostly constricts vessels to restore tone with less tachycardia than dopamine, which is why guidelines recommend it first."
+        }
+      ]
+    },
+    {
+      "id": "ethics-eol",
+      "title": "Ethics and end-of-life care",
+      "prerequisites": [],
+      "questions": [
+        {
+          "question": "'Autonomy' in healthcare ethics means:",
+          "choices": [
+            "Doing what is best for the patient",
+            "Avoiding harm",
+            "The patient's right to make their own informed decisions",
+            "Treating everyone equally"
+          ],
+          "answerIndex": 2,
+          "explanation": "Autonomy is self-determination. A competent patient may refuse treatment even when clinicians disagree, as long as the decision is informed."
+        },
+        {
+          "question": "'Beneficence' and 'non-maleficence' mean, respectively:",
+          "choices": [
+            "Be fair, and be honest",
+            "Do good, and do no harm",
+            "Respect choices, and keep secrets",
+            "Treat quickly, and document"
+          ],
+          "answerIndex": 1,
+          "explanation": "Beneficence is acting for the patient's benefit; non-maleficence is avoiding harm. Many ICU dilemmas are a tension between these and the patient's own wishes."
+        },
+        {
+          "question": "A DNR (do-not-resuscitate) order means:",
+          "choices": [
+            "No CPR if the heart stops — all other care continues unless otherwise specified",
+            "Stop all treatment",
+            "No pain medication",
+            "Comfort care only"
+          ],
+          "answerIndex": 0,
+          "explanation": "DNR addresses one thing: resuscitation at cardiac arrest. Antibiotics, fluids, surgery, and symptom management may all still be given unless the plan says otherwise."
+        },
+        {
+          "question": "When a patient can't speak for themselves, the surrogate's decision should be based on:",
+          "choices": [
+            "What the family prefers",
+            "What costs the least",
+            "What the nurse recommends",
+            "What the patient would have wanted (substituted judgment)"
+          ],
+          "answerIndex": 3,
+          "explanation": "The surrogate's role is to be the patient's voice — using an advance directive or prior conversations. Only if the patient's wishes are unknown does 'best interest' guide the choice."
+        },
+        {
+          "question": "Palliative care is:",
+          "choices": [
+            "Only for the last days of life",
+            "The same as hospice",
+            "Symptom relief and support that can be given alongside curative treatment",
+            "Withdrawal of all treatment"
+          ],
+          "answerIndex": 2,
+          "explanation": "Palliative care focuses on comfort and quality of life at any stage of serious illness, and can run in parallel with aggressive treatment. Hospice is a subset for patients near the end of life."
+        }
+      ]
+    }
+  ]
+}

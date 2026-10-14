@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#120a2a">
+  <title>Know Jack — Concept Trivia</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button id="homeBtn" class="icon-btn" title="Back to menu" aria-label="Back to menu">⌂</button>
+    <div class="brand">KNOW<span>JACK</span></div>
+    <button id="muteBtn" class="icon-btn" title="Mute sound" aria-label="Mute sound" aria-pressed="false">🔊</button>
+  </header>
+
+  <main id="app">
+
+    <!-- MENU -->
+    <section id="screen-menu" class="screen active">
+      <h1 class="title">Pick a category</h1>
+      <p class="subtitle">Quick questions. Big buzzer. Learn the concept, then apply it.</p>
+      <div id="categoryList" class="card-list" aria-live="polite">
+        <div class="muted">Loading categories…</div>
+      </div>
+      <div class="divider"><span>or</span></div>
+      <label class="btn btn-secondary file-btn">
+        Load custom category (.json)
+        <input type="file" id="customFile" accept=".json,application/json" hidden>
+      </label>
+      <p class="hint">Custom files stay on your device — nothing is uploaded.</p>
+      <div id="menuError" class="error" role="alert" hidden></div>
+    </section>
+
+    <!-- CATEGORY INFO -->
+    <section id="screen-info" class="screen">
+      <h1 id="infoTitle" class="title"></h1>
+      <p id="infoDesc" class="subtitle"></p>
+      <div class="stats-row">
+        <div class="stat"><div id="infoConcepts" class="stat-num">0</div><div class="stat-label">concepts</div></div>
+        <div class="stat"><div id="infoQuestions" class="stat-num">0</div><div class="stat-label">questions</div></div>
+        <div class="stat"><div id="infoSeconds" class="stat-num">15</div><div class="stat-label">sec / question</div></div>
+      </div>
+      <details class="concept-path">
+        <summary>Learning path (foundational → applied)</summary>
+        <ol id="infoPath"></ol>
+      </details>
+      <div class="options-row">
+        <label class="toggle"><input type="checkbox" id="optShuffle"> Shuffle questions within each concept</label>
+        <label class="toggle">Questions per concept
+          <select id="optPerConcept">
+            <option value="0">All</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </label>
+      </div>
+      <button id="startBtn" class="btn btn-primary btn-big">Start game</button>
+    </section>
+
+    <!-- QUESTION -->
+    <section id="screen-question" class="screen">
+      <div class="hud">
+        <div class="hud-left">
+          <div id="qProgress" class="hud-progress">1 / 10</div>
+          <div id="qConcept" class="hud-concept">Concept</div>
+        </div>
+        <div class="hud-right">
+          <div class="hud-label">score</div>
+          <div id="score" class="hud-score">0</div>
+        </div>
+      </div>
+
+      <div class="timer" aria-label="Time remaining">
+        <div id="timerBar" class="timer-bar"></div>
+        <div id="timerText" class="timer-text">15</div>
+      </div>
+
+      <div id="questionCard" class="question-card">
+        <p id="questionText" class="question-text"></p>
+      </div>
+
+      <div id="choices" class="choices" role="group" aria-label="Answer choices"></div>
+
+      <div id="feedback" class="feedback" hidden>
+        <div id="feedbackVerdict" class="feedback-verdict"></div>
+        <div id="feedbackPoints" class="feedback-points"></div>
+        <p id="feedbackExplain" class="feedback-explain"></p>
+        <button id="nextBtn" class="btn btn-primary">Next →</button>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="screen-results" class="screen">
+      <h1 class="title">Final results</h1>
+      <div class="final-score">
+        <div id="finalScore" class="final-num">0</div>
+        <div class="stat-label">points</div>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div id="finalCorrect" class="stat-num">0/0</div><div class="stat-label">correct</div></div>
+        <div class="stat"><div id="finalAccuracy" class="stat-num">0%</div><div class="stat-label">accuracy</div></div>
+        <div class="stat"><div id="finalAvgTime" class="stat-num">0s</div><div class="stat-label">avg answer</div></div>
+      </div>
+      <h2 class="section-title">Breakdown by topic</h2>
+      <div id="breakdown" class="breakdown"></div>
+      <div id="weakSpots" class="weak-spots"></div>
+      <div class="btn-row">
+        <button id="replayBtn" class="btn btn-primary">Play again</button>
+        <button id="menuBtn" class="btn btn-secondary">Change category</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/validator.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
